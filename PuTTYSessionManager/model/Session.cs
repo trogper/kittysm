@@ -256,7 +256,20 @@ namespace uk.org.riseley.puttySessionManager.model
             get { return portnumber; }
             set { portnumber = value; }
         }
+        private bool authgssapi = false;
 
+        public bool Authgssapi
+        {
+            get { return authgssapi; }
+            set { authgssapi = value; }
+        }
+        private bool gssapifwd = false;
+
+        public bool Gssapifwd
+        {
+            get { return gssapifwd; }
+            set { gssapifwd = value; }
+        }
         private string portforwards;
 
         public string Portforwards

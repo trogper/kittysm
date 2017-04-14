@@ -37,14 +37,17 @@ namespace uk.org.riseley.puttySessionManager.control.options
             SessionController.Protocol wp = (SessionController.Protocol)Properties.Settings.Default.WinSCPProtocol;
             if (wp == SessionController.Protocol.FTP)
             {
+                wsOptionRadioButton.Checked = true;
                 wsFtpRadioButton.Checked = true;
             }
             else if (wp == SessionController.Protocol.SCP)
             {
+                wsOptionRadioButton.Checked = true;
                 wsScpRadioButton.Checked = true;
             }
             else if (wp == SessionController.Protocol.SFTP)
             {
+                wsOptionRadioButton.Checked = true;
                 wsSftpRadioButton.Checked = true;
             }
             else if (wp == SessionController.Protocol.AUTO)
@@ -63,6 +66,13 @@ namespace uk.org.riseley.puttySessionManager.control.options
                 wsprefScpRadioButton.Checked = true;
             }
 
+            // Reset the WinSCP Use GSS button to the saved pref
+            bool wsGss = Properties.Settings.Default.WinSCPUseGss;
+            if (wsGss == true)
+            {
+                wsGssCheckBox.Checked = true;
+            }
+
             // Call the wsVerRadioButton_CheckedChanged method
             // to ensure only a valid combination of protocol and
             // version is displayed
@@ -78,7 +88,8 @@ namespace uk.org.riseley.puttySessionManager.control.options
         private void protocolRadioButton_CheckedChanged(object sender, EventArgs e)
         {
             wsPrefGroupBox.Enabled = wsSessionInfoRadioButton.Checked;
-
+            wsGssCheckBox.Enabled = wsSessionInfoRadioButton.Checked;
+            wsOptionGroupBox.Enabled = wsOptionRadioButton.Checked;
             if (wsSessionInfoRadioButton.Checked == true)
             {
                 Properties.Settings.Default.WinSCPProtocol = (int)SessionController.Protocol.AUTO;
@@ -90,6 +101,7 @@ namespace uk.org.riseley.puttySessionManager.control.options
                 {
                     Properties.Settings.Default.WinSCPPrefProtocol = (int)SessionController.Protocol.SFTP;
                 }
+                Properties.Settings.Default.WinSCPUseGss = wsGssCheckBox.Checked;
             }
             else if (wsSftpRadioButton.Checked == true)
             {
@@ -160,6 +172,5 @@ namespace uk.org.riseley.puttySessionManager.control.options
                 winSCPIniTextBox.Text = openFileDialog.FileName;
             }
         }
-
     }
 }

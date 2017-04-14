@@ -49,9 +49,19 @@ namespace uk.org.riseley.puttySessionManager.controller
         private const string PUTTY_PROTOCOL_ATTRIB = "Protocol";
 
         /// <summary>
-        /// The protocol registry value
+        /// The port number registry value
         /// </summary>
         private const string PUTTY_PORTNUMBER_ATTRIB = "PortNumber";
+
+        /// <summary>
+        /// The GSS API registry value
+        /// </summary>
+        private const string PUTTY_AUTHGSSAPI_ATTRIB = "AuthGSSAPI";
+
+        /// <summary>
+        /// The GSS API Foward registry value
+        /// </summary>
+        private const string PUTTY_GSSAPIFWD_ATTRIB = "GssapiFwd";
 
         /// <summary>
         /// The private key location for the session
@@ -157,6 +167,40 @@ namespace uk.org.riseley.puttySessionManager.controller
                     }
                     s.Portnumber = portnumber;
 
+                    // Setup the authgssapi 
+                    object authgssapiObject = sessKey.GetValue(PUTTY_AUTHGSSAPI_ATTRIB);
+                    bool authgssapi = false;
+                    // Only attempt to cast to an bool if the object is not null
+                    if (authgssapiObject != null)
+                    {
+                        try
+                        {
+                            authgssapi = System.Convert.ToBoolean((int)authgssapiObject);
+                        }
+                        catch
+                        {
+                            authgssapi = false;
+                        }
+                    }
+                    s.Authgssapi = authgssapi;
+
+                    // Setup the gssapifwd 
+                    object gssapifwdObject = sessKey.GetValue(PUTTY_GSSAPIFWD_ATTRIB);
+                    bool gssapifwd = false;
+                    // Only attempt to cast to an int if the object is not null
+                    if (gssapifwdObject != null)
+                    {
+                        try
+                        {
+                            gssapifwd = System.Convert.ToBoolean((int)gssapifwdObject);
+                        }
+                        catch
+                        {
+                            gssapifwd = false;
+                        }
+                    }
+                    s.Gssapifwd = gssapifwd;
+
                     s.setToolTip();
 
                     sl.Add(s);
@@ -220,6 +264,30 @@ namespace uk.org.riseley.puttySessionManager.controller
             return updateAttribute(  s.SessionKey
                                    , PUTTY_PORTNUMBER_ATTRIB
                                    , s.Portnumber
+                                   , RegistryValueKind.DWord);
+        }
+
+        /// <summary>
+        /// Update the session authgssapi 
+        /// </summary>
+        /// <param name="s"></param>
+        public bool updateAuthgssapi(Session s)
+        {
+            return updateAttribute(s.SessionKey
+                                   , PUTTY_AUTHGSSAPI_ATTRIB
+                                   , s.Authgssapi ? 1 : 0
+                                   , RegistryValueKind.DWord);
+        }
+
+        /// <summary>
+        /// Update the session gssapifwd 
+        /// </summary>
+        /// <param name="s"></param>
+        public bool updateGssapifwd(Session s)
+        {
+            return updateAttribute(s.SessionKey
+                                   , PUTTY_GSSAPIFWD_ATTRIB
+                                   , s.Gssapifwd ? 1 : 0
                                    , RegistryValueKind.DWord);
         }
 
@@ -289,6 +357,8 @@ namespace uk.org.riseley.puttySessionManager.controller
             bool foldernameSet = false;
             bool protocolSet = false;
             bool portnumberSet = false;
+            bool authgssapiSet = false;
+            bool gssapifwdSet = false;
 
             object value;
             foreach (string valueName in template.GetValueNames())
@@ -322,6 +392,16 @@ namespace uk.org.riseley.puttySessionManager.controller
                     portnumberSet = true;
                     value = nsr.Portnumber;
                 }
+                else if (valueName.Equals(PUTTY_AUTHGSSAPI_ATTRIB))
+                {
+                    authgssapiSet = true;
+                    value = nsr.Authgssapi;
+                }
+                else if (valueName.Equals(PUTTY_GSSAPIFWD_ATTRIB))
+                {
+                    gssapifwdSet = true;
+                    value = nsr.Gssapifwd;
+                }
                 else
                 {
                     value = template.GetValue(valueName);
@@ -345,6 +425,14 @@ namespace uk.org.riseley.puttySessionManager.controller
             // Set the portnumber if it hasn't already been set
             if (portnumberSet == false)
                 newSession.SetValue(PUTTY_PORTNUMBER_ATTRIB, nsr.Portnumber, RegistryValueKind.DWord);
+
+            // Set the authgssapi if it hasn't already been set
+            if (authgssapiSet == false)
+                newSession.SetValue(PUTTY_AUTHGSSAPI_ATTRIB, nsr.Authgssapi, RegistryValueKind.DWord);
+
+            // Set the gssapifwd if it hasn't already been set
+            if (gssapifwdSet == false)
+                newSession.SetValue(PUTTY_GSSAPIFWD_ATTRIB, nsr.Gssapifwd, RegistryValueKind.DWord);
 
             template.Close();
             newSession.Close();
@@ -659,6 +747,7 @@ namespace uk.org.riseley.puttySessionManager.controller
             initialiseHostName();
             initialiseKeepAlives();
             initialiseProtocolPort();
+            initialiseGss();
             initialiseScrollback();
             initialiseSelectionChars();
             initialiseSessionFolder();
@@ -731,6 +820,15 @@ namespace uk.org.riseley.puttySessionManager.controller
         {
             attribProtocolPort.Add("Protocol");
             attribProtocolPort.Add("PortNumber");
+        }
+
+        /// <summary>
+        /// Setup the Authgssapi and Gssapifwd attributes
+        /// </summary>
+        private void initialiseGss()
+        {
+            attribProtocolPort.Add("AuthGSSAPI");
+            attribProtocolPort.Add("GssapiFwd");
         }
 
         /// <summary>

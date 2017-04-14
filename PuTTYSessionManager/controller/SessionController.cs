@@ -744,6 +744,8 @@ namespace uk.org.riseley.puttySessionManager.controller
             string username = s.Username;
             string protocol = s.Protocol;
             int portnumber = s.Portnumber;
+            bool authgssapi = s.Authgssapi;
+            bool gssapifwd = s.Gssapifwd;
 
             // Override the default username if stored in the hostname
             if (hostname != null && hostname.Contains("@"))
@@ -831,13 +833,13 @@ namespace uk.org.riseley.puttySessionManager.controller
                     Properties.Settings.Default.WinSCPIniLocation != null &&
                     !Properties.Settings.Default.WinSCPIniLocation.Equals("") )
                 {
-                    execArgs = "/ini=\"" + Properties.Settings.Default.WinSCPIniLocation + "\" ";
+                    execArgs = execArgs + " /ini=\"" + Properties.Settings.Default.WinSCPIniLocation + "\"";
                 }
 
                 // Setup the /privatekey option 
                 if ( !(s.PrivateKeyLocation.Equals("")) )
                 {
-                    execArgs = "/privatekey=\"" + s.PrivateKeyLocation + "\" ";
+                    execArgs = execArgs + " /privatekey=\"" + s.PrivateKeyLocation + "\"";
                 }
 
                 // Only bother if we have a hostname set
@@ -893,13 +895,33 @@ namespace uk.org.riseley.puttySessionManager.controller
                             break;
                     }
 
+                    // We only do single signon for ssh protcols and only if we have a username
+                    // Support in WinSCP for GSS (kerberos) was first introduced in 3.6.1
+                    if ((protocol.Equals("scp://") || protocol.Equals("sftp://")) && username != null && !(username.Equals("")))
+                        {
+                        // If WinSCP Options is set to use PuTTY Session Information GSS settings then if authgssapi is true then we
+                        // are ready to move forward with single signon for WinSCP.
+                        bool wsGss = Properties.Settings.Default.WinSCPUseGss;
+                        if (wsGss == true && authgssapi)
+                        { 
+                            if (gssapifwd)
+                            {
+                                execArgs = execArgs + " /rawsettings AuthGSSAPI=1 GSSAPIFwdTGT=1";
+                            }
+                            else
+                            {
+                                execArgs = execArgs + " /rawsettings AuthGSSAPI=1";
+                            }
+                        }
+                    }
 
                     // Finalise the auth string
                     String auth = "";
                     if (username != null && !(username.Equals("")))
                         auth = username + "@";
 
-                    execArgs = execArgs + protocol + auth + hostname + ":" + portnumber;
+                    // Per WinSCP documentation /rawsettings must be placed after the URL if any.
+                    execArgs = protocol + auth + hostname + ":" + portnumber + execArgs;
                 }
                 execLocation = Properties.Settings.Default.WinSCPLocation;
             }
@@ -980,6 +1002,8 @@ namespace uk.org.riseley.puttySessionManager.controller
                                                                 , sa.NewSession.SessionDisplayText
                                                                 , sa.NewSession.Protocol
                                                                 , sa.NewSession.Portnumber
+                                                                , sa.NewSession.Authgssapi
+                                                                , sa.NewSession.Gssapifwd
                                                                 , true, false);
                     createNewSession(nsr, worker);
                 }
@@ -996,6 +1020,8 @@ namespace uk.org.riseley.puttySessionManager.controller
                         sessionProvider.updateFolder(sa.NewSession);
                         sessionProvider.updateProtocol(sa.NewSession);
                         sessionProvider.updatePortnumber(sa.NewSession);
+                        sessionProvider.updateAuthgssapi(sa.NewSession);
+                        sessionProvider.updateGssapifwd(sa.NewSession);
                     }
                 }
                 else if (sa.Action == SessionAction.ACTION.RENAME)

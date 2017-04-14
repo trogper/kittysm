@@ -45,7 +45,6 @@ namespace uk.org.riseley.puttySessionManager.control.options
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.treeTableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.subfolderTableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -119,7 +118,7 @@ namespace uk.org.riseley.puttySessionManager.control.options
             this.numericUpDown1.Size = new System.Drawing.Size(35, 20);
             this.numericUpDown1.TabIndex = 32;
             this.optionsToolTip.SetToolTip(this.numericUpDown1, "Threshold for warning when using \"Launch Folder\" or \r\n\"Launch Folder and Subfolde" +
-                    "rs\" from the tree view");
+        "rs\" from the tree view");
             this.numericUpDown1.Value = global::uk.org.riseley.puttySessionManager.Properties.Settings.Default.SubfolderSessionWarning;
             // 
             // sessionWarningLabel
@@ -135,8 +134,8 @@ namespace uk.org.riseley.puttySessionManager.control.options
             // 
             // sampleTreeTextbox
             // 
-            this.sampleTreeTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.sampleTreeTextbox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.sampleTreeTextbox.DataBindings.Add(new System.Windows.Forms.Binding("Font", global::uk.org.riseley.puttySessionManager.Properties.Settings.Default, "TreeFont", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.sampleTreeTextbox.Font = global::uk.org.riseley.puttySessionManager.Properties.Settings.Default.TreeFont;
             this.sampleTreeTextbox.Location = new System.Drawing.Point(111, 106);
@@ -150,8 +149,8 @@ namespace uk.org.riseley.puttySessionManager.control.options
             // 
             // chooseTreeFontButton
             // 
-            this.chooseTreeFontButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.chooseTreeFontButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.chooseTreeFontButton.AutoSize = true;
             this.chooseTreeFontButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.chooseTreeFontButton.Location = new System.Drawing.Point(3, 104);
@@ -164,30 +163,30 @@ namespace uk.org.riseley.puttySessionManager.control.options
             // 
             // expandTreeCheckBox
             // 
-            this.expandTreeCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.expandTreeCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.expandTreeCheckBox.AutoSize = true;
             this.expandTreeCheckBox.Checked = global::uk.org.riseley.puttySessionManager.Properties.Settings.Default.ExpandTreeOnStartup;
             this.expandTreeCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::uk.org.riseley.puttySessionManager.Properties.Settings.Default, "ExpandTreeOnStartup", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.expandTreeCheckBox.Location = new System.Drawing.Point(192, 3);
+            this.expandTreeCheckBox.Location = new System.Drawing.Point(111, 3);
             this.expandTreeCheckBox.Name = "expandTreeCheckBox";
-            this.expandTreeCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.expandTreeCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.expandTreeCheckBox.Size = new System.Drawing.Size(133, 17);
             this.expandTreeCheckBox.TabIndex = 27;
             this.expandTreeCheckBox.Text = "E&xpand tree on startup";
             this.optionsToolTip.SetToolTip(this.expandTreeCheckBox, "The tree view will be fully expanded on startup.\r\nNot recommended if you have 100" +
-                    "\'s of sessions.");
+        "\'s of sessions.");
             this.expandTreeCheckBox.UseVisualStyleBackColor = true;
             // 
             // displayTreeIconsCheckBox
             // 
-            this.displayTreeIconsCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.displayTreeIconsCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.displayTreeIconsCheckBox.AutoSize = true;
             this.displayTreeIconsCheckBox.Checked = global::uk.org.riseley.puttySessionManager.Properties.Settings.Default.DisplayTreeIcons;
             this.displayTreeIconsCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.displayTreeIconsCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::uk.org.riseley.puttySessionManager.Properties.Settings.Default, "DisplayTreeIcons", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.displayTreeIconsCheckBox.Location = new System.Drawing.Point(205, 26);
+            this.displayTreeIconsCheckBox.Location = new System.Drawing.Point(111, 26);
             this.displayTreeIconsCheckBox.Name = "displayTreeIconsCheckBox";
-            this.displayTreeIconsCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.displayTreeIconsCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.displayTreeIconsCheckBox.Size = new System.Drawing.Size(120, 17);
             this.displayTreeIconsCheckBox.TabIndex = 30;
             this.displayTreeIconsCheckBox.Text = "&Display icons in tree";
@@ -197,14 +196,14 @@ namespace uk.org.riseley.puttySessionManager.control.options
             // 
             // toolTipsCheckBox
             // 
-            this.toolTipsCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.toolTipsCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.toolTipsCheckBox.AutoSize = true;
             this.toolTipsCheckBox.Checked = global::uk.org.riseley.puttySessionManager.Properties.Settings.Default.ToolTipsEnabled;
             this.toolTipsCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.toolTipsCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::uk.org.riseley.puttySessionManager.Properties.Settings.Default, "ToolTipsEnabled", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.toolTipsCheckBox.Location = new System.Drawing.Point(230, 49);
+            this.toolTipsCheckBox.Location = new System.Drawing.Point(111, 49);
             this.toolTipsCheckBox.Name = "toolTipsCheckBox";
-            this.toolTipsCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.toolTipsCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.toolTipsCheckBox.Size = new System.Drawing.Size(95, 17);
             this.toolTipsCheckBox.TabIndex = 33;
             this.toolTipsCheckBox.Text = "&Enable tooltips";

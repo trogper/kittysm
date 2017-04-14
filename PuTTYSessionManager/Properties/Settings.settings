@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="PuttyLocation" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Program Files\PuTTY\putty.exe</Value>
+      <Value Profile="(Default)">C:\Program Files (x86)\PuTTY\putty.exe</Value>
     </Setting>
     <Setting Name="TransparencyEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -165,7 +165,7 @@
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="PageantLocation" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Program Files\PuTTY\pageant.exe</Value>
+      <Value Profile="(Default)">C:\Program Files (x86)\PuTTY\pageant.exe</Value>
     </Setting>
     <Setting Name="PageantKeyList" Type="System.Collections.Specialized.StringCollection" Scope="User">
       <Value Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
@@ -178,7 +178,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="FileZillaLocation" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Program Files\FileZilla\FileZilla.exe</Value>
+      <Value Profile="(Default)">C:\Program Files (x86)\FileZilla FTP Client\FileZilla.exe</Value>
     </Setting>
     <Setting Name="FileZillaEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -193,13 +193,16 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="WinSCPLocation" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Program Files\WinSCP\WinSCP.exe</Value>
+      <Value Profile="(Default)">C:\Program Files (x86)\WinSCP\WinSCP.exe</Value>
     </Setting>
     <Setting Name="WinSCPProtocol" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="WinSCPPrefProtocol" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="WinSCPUseGss" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="WinSCPVersion" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">4</Value>
@@ -241,7 +244,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="PSFTPLocation" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Program Files\PuTTY\psftp.exe</Value>
+      <Value Profile="(Default)">C:\Program Files (x86)\PuTTY\psftp.exe</Value>
     </Setting>
     <Setting Name="ConEmuEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

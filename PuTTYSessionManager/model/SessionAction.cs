@@ -65,7 +65,9 @@ namespace uk.org.riseley.puttySessionManager.model
             else if ((newSession.Hostname.Equals(existingSession.Hostname)) &&
                      (newSession.FolderName.Equals(existingSession.FolderName)) &&
                      (newSession.Protocol.Equals(existingSession.Protocol)) &&
-                     (newSession.Portnumber == existingSession.Portnumber) )
+                     (newSession.Portnumber == existingSession.Portnumber) &&
+                     (newSession.Authgssapi == existingSession.Authgssapi) &&
+                     (newSession.Gssapifwd == existingSession.Gssapifwd))
                 this.action = ACTION.NONE;
             else
                 this.action = ACTION.UPDATE;

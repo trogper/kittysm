@@ -126,14 +126,14 @@ namespace uk.org.riseley.puttySessionManager.control.options
             // 
             // fileRadioButton
             // 
-            this.fileRadioButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.fileRadioButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.fileRadioButton.AutoSize = true;
             this.fileRadioButton.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.fileRadioButton.Checked = true;
-            this.fileRadioButton.Location = new System.Drawing.Point(125, 9);
+            this.fileRadioButton.Location = new System.Drawing.Point(3, 9);
             this.fileRadioButton.Name = "fileRadioButton";
             this.fileRadioButton.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            this.fileRadioButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.fileRadioButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.fileRadioButton.Size = new System.Drawing.Size(41, 25);
             this.fileRadioButton.TabIndex = 0;
             this.fileRadioButton.TabStop = true;
@@ -143,13 +143,13 @@ namespace uk.org.riseley.puttySessionManager.control.options
             // 
             // urlRadioButton
             // 
-            this.urlRadioButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.urlRadioButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.urlRadioButton.AutoSize = true;
             this.urlRadioButton.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.urlRadioButton.Location = new System.Drawing.Point(96, 52);
+            this.urlRadioButton.Location = new System.Drawing.Point(3, 52);
             this.urlRadioButton.Name = "urlRadioButton";
             this.urlRadioButton.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.urlRadioButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.urlRadioButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.urlRadioButton.Size = new System.Drawing.Size(70, 25);
             this.urlRadioButton.TabIndex = 1;
             this.urlRadioButton.Text = "HTTP Url";

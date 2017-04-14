@@ -40,6 +40,8 @@ namespace uk.org.riseley.puttySessionManager.model
             Hostname = s.Hostname;
             Protocol = s.Protocol;
             Portnumber = s.Portnumber;
+            Authgssapi = s.Authgssapi;
+            Gssapifwd = s.Gssapifwd;
         }
 
         [FieldQuoted('"', QuoteMode.OptionalForRead, MultilineMode.AllowForRead)]
@@ -98,6 +100,24 @@ namespace uk.org.riseley.puttySessionManager.model
         {
             get { return mPortnumber; }
             set { mPortnumber = value; }
+        }
+
+        [FieldQuoted('"', QuoteMode.OptionalForRead, MultilineMode.AllowForRead)]
+        private bool mAuthgssapi;
+
+        public bool Authgssapi
+        {
+            get { return mAuthgssapi; }
+            set { mAuthgssapi = value; }
+        }
+
+        [FieldQuoted('"', QuoteMode.OptionalForRead, MultilineMode.AllowForRead)]
+        private bool mGssapifwd;
+
+        public bool Gssapifwd
+        {
+            get { return mGssapifwd; }
+            set { mGssapifwd = value; }
         }
     }
 }

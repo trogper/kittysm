@@ -91,6 +91,20 @@ namespace uk.org.riseley.puttySessionManager.controller
         bool updatePortnumber(Session s);
 
         /// <summary>
+        /// Updates the sessions authgssapi 
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        bool updateAuthgssapi(Session s);
+
+        /// <summary>
+        /// Updates the sessions gssapifwd 
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
+        bool updateGssapifwd(Session s);
+
+        /// <summary>
         /// 
         /// </summary>
         /// <param name="csr"></param>

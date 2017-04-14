@@ -1,10 +1,30 @@
-PuTTY Session Manager v0.42 ( 04-08-2010 )
+PuTTY Session Manager v0.50 ( 17-04-2017 )
 =============================================
 Tenth release of PuTTY Session Manager
 
 Minor release with small enhancements
 
 Feature requests / enhancements:
+
+Not Tracked:  Changed newPort and existingPort to newPortNumber and existingPortNumber for consistency. - Ken Sharpe
+
+Not Tracked:  Added AuthGSSAPI and GssapiFwd attributes to session. 
+              Added "Use GSS Options" to Options WinSCP Panel along with some reformatting.
+              Added Single Signon to WinSCP invocation. - Ken Sharpe
+
+Not Tracked:  Updated default location for PuTTY, WinSCP, and FileZilla - Ken Sharpe
+
+Not Tracked:  Changed Bullets and Checkboxes on Options to be left-to-right. - Ken Sharpe
+
+Not Tracked:  On Options General tab - adjusted panel to make locate sftp.exe visible. - Ken Sharpe
+
+Not Tracked:  On Options WinSCP tab - Updated Preferred Protcol selections to trigger a button event. - Ken Sharpe
+
+#50 [PATCH] Move window off of missing monitors - lordgilman
+
+#47	Run PuTTY session in a ConEmu tab
+
+#48 SFTP support (psftp.exe) - damirs
 
 Not Tracked:  Added support for FileZilla 3.x.  Tested with v3.3.3
 
@@ -17,9 +37,9 @@ Not Tracked:  Improved drag and drop behaviour
           Folders can then be launched with a right click, folders and subfolders
           with a middle click.  Removed "Launch Sessions" submenu from main tray menu
 
-2795881:  Added protocol and port to CSV session export and sync sessions.
+2795881:  Added protocol and port, gssapi auth, gssapi fwd  to CSV session export and sync sessions.
 		  NOTE: This means that csv files created by v0.41 and below will no longer work 
-		  with the sync sessions function. Please re-export sessions from a v0.42 installation.
+		  with the sync sessions function. Please re-export sessions from a v0.50 installation.
 
 PuTTY Session Manager v0.41 ( 02-08-2010 )
 =============================================

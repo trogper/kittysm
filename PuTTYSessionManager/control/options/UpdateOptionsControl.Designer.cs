@@ -45,7 +45,6 @@ namespace uk.org.riseley.puttySessionManager.control.options
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.updateTableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.checkForUpdateButton = new System.Windows.Forms.Button();
             this.urlTextBox = new System.Windows.Forms.TextBox();
@@ -145,11 +144,11 @@ namespace uk.org.riseley.puttySessionManager.control.options
             // 
             // directRadioButton
             // 
-            this.directRadioButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.directRadioButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.directRadioButton.AutoSize = true;
             this.directRadioButton.Location = new System.Drawing.Point(3, 26);
             this.directRadioButton.Name = "directRadioButton";
-            this.directRadioButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.directRadioButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.directRadioButton.Size = new System.Drawing.Size(110, 17);
             this.directRadioButton.TabIndex = 4;
             this.directRadioButton.Text = "Direct &Connection";
@@ -168,12 +167,12 @@ namespace uk.org.riseley.puttySessionManager.control.options
             // 
             // ieProxyRadioButton
             // 
-            this.ieProxyRadioButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.ieProxyRadioButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.ieProxyRadioButton.AutoSize = true;
             this.ieProxyRadioButton.Checked = true;
-            this.ieProxyRadioButton.Location = new System.Drawing.Point(15, 3);
+            this.ieProxyRadioButton.Location = new System.Drawing.Point(3, 3);
             this.ieProxyRadioButton.Name = "ieProxyRadioButton";
-            this.ieProxyRadioButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.ieProxyRadioButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ieProxyRadioButton.Size = new System.Drawing.Size(98, 17);
             this.ieProxyRadioButton.TabIndex = 3;
             this.ieProxyRadioButton.TabStop = true;
@@ -193,8 +192,8 @@ namespace uk.org.riseley.puttySessionManager.control.options
             // 
             // proxyPortTextBox
             // 
-            this.proxyPortTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.proxyPortTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.proxyPortTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::uk.org.riseley.puttySessionManager.Properties.Settings.Default, "ProxyPort", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.proxyPortTextBox.Location = new System.Drawing.Point(271, 49);
             this.proxyPortTextBox.MaxLength = 5;
@@ -205,11 +204,11 @@ namespace uk.org.riseley.puttySessionManager.control.options
             // 
             // userProxyRadioButton
             // 
-            this.userProxyRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.userProxyRadioButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.userProxyRadioButton.AutoSize = true;
-            this.userProxyRadioButton.Location = new System.Drawing.Point(8, 49);
+            this.userProxyRadioButton.Location = new System.Drawing.Point(3, 52);
             this.userProxyRadioButton.Name = "userProxyRadioButton";
-            this.userProxyRadioButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.userProxyRadioButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.userProxyRadioButton.Size = new System.Drawing.Size(105, 17);
             this.userProxyRadioButton.TabIndex = 5;
             this.userProxyRadioButton.Text = "Use &HTTP Proxy";
@@ -218,8 +217,8 @@ namespace uk.org.riseley.puttySessionManager.control.options
             // 
             // proxyServerTextBox
             // 
-            this.proxyServerTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.proxyServerTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.proxyServerTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::uk.org.riseley.puttySessionManager.Properties.Settings.Default, "ProxyServer", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.proxyServerTextBox.Location = new System.Drawing.Point(119, 49);
             this.proxyServerTextBox.Name = "proxyServerTextBox";
@@ -229,8 +228,8 @@ namespace uk.org.riseley.puttySessionManager.control.options
             // 
             // urlLabel
             // 
-            this.urlLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.urlLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.urlLabel.AutoSize = true;
             this.urlLabel.Location = new System.Drawing.Point(103, 0);
             this.urlLabel.Name = "urlLabel";
@@ -240,13 +239,13 @@ namespace uk.org.riseley.puttySessionManager.control.options
             // 
             // urlCheckBox
             // 
-            this.urlCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.urlCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.urlCheckBox.AutoSize = true;
             this.urlCheckBox.Checked = true;
             this.urlCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.urlCheckBox.Location = new System.Drawing.Point(3, 17);
             this.urlCheckBox.Name = "urlCheckBox";
-            this.urlCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.urlCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.urlCheckBox.Size = new System.Drawing.Size(94, 17);
             this.urlCheckBox.TabIndex = 1;
             this.urlCheckBox.Text = "Use &default url";

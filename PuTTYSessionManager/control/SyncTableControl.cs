@@ -150,8 +150,12 @@ namespace uk.org.riseley.puttySessionManager.control
             string existingSessionHostname = "";
             string newProtocol = "";
             string existingProtocol = "";
-            string newPort = "";
-            string existingPort = "";
+            string newPortnumber = "";
+            string existingPortnumber = "";
+            string newAuthGSSAPI = "";
+            string existingAuthGSSAPI = "";
+            string newGssapiFwd = "";
+            string existingGssapiFwd = "";
 
             if (action.NewSession != null)
             {
@@ -159,7 +163,9 @@ namespace uk.org.riseley.puttySessionManager.control
                 newSessionFolder = action.NewSession.FolderDisplayText;
                 newSessionHostname = action.NewSession.Hostname;
                 newProtocol = action.NewSession.Protocol;
-                newPort = action.NewSession.Portnumber.ToString();
+                newPortnumber = action.NewSession.Portnumber.ToString();
+                newAuthGSSAPI = action.NewSession.Authgssapi.ToString();
+                newGssapiFwd = action.NewSession.Gssapifwd.ToString();
             }
 
             if (action.ExistingSession != null)
@@ -176,7 +182,9 @@ namespace uk.org.riseley.puttySessionManager.control
                 existingSessionFolder = action.ExistingSession.FolderDisplayText;
                 existingSessionHostname = action.ExistingSession.Hostname;
                 existingProtocol = action.ExistingSession.Protocol;
-                existingPort = action.ExistingSession.Portnumber.ToString();
+                existingPortnumber = action.ExistingSession.Portnumber.ToString();
+                existingAuthGSSAPI = action.ExistingSession.Authgssapi.ToString();
+                existingGssapiFwd = action.ExistingSession.Gssapifwd.ToString();
             }
 
             String[] cellValues = new String[] {    sessionName
@@ -186,8 +194,12 @@ namespace uk.org.riseley.puttySessionManager.control
                                                   , newSessionHostname
                                                   , existingProtocol
                                                   , newProtocol
-                                                  , existingPort
-                                                  , newPort
+                                                  , existingPortnumber
+                                                  , newPortnumber
+                                                  , existingAuthGSSAPI
+                                                  , newAuthGSSAPI
+                                                  , existingGssapiFwd
+                                                  , newGssapiFwd
                                                   , action.getActionDescription()
                                                   , getAction(action.Action)
                                                 };

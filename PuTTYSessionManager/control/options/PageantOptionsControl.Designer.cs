@@ -45,7 +45,6 @@ namespace uk.org.riseley.puttySessionManager.control.options
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.pageantTableLayout = new System.Windows.Forms.TableLayoutPanel();
             this.launchPageantButton = new System.Windows.Forms.Button();
             this.launchPageantCheckBox = new System.Windows.Forms.CheckBox();
@@ -95,13 +94,13 @@ namespace uk.org.riseley.puttySessionManager.control.options
             // 
             // launchPageantCheckBox
             // 
-            this.launchPageantCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.launchPageantCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.launchPageantCheckBox.AutoSize = true;
             this.launchPageantCheckBox.Checked = global::uk.org.riseley.puttySessionManager.Properties.Settings.Default.LaunchPageantOnStart;
             this.launchPageantCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::uk.org.riseley.puttySessionManager.Properties.Settings.Default, "LaunchPageantOnStart", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.launchPageantCheckBox.Location = new System.Drawing.Point(172, 6);
+            this.launchPageantCheckBox.Location = new System.Drawing.Point(123, 6);
             this.launchPageantCheckBox.Name = "launchPageantCheckBox";
-            this.launchPageantCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.launchPageantCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.launchPageantCheckBox.Size = new System.Drawing.Size(152, 17);
             this.launchPageantCheckBox.TabIndex = 18;
             this.launchPageantCheckBox.Text = "Launch Pageant at &startup";
@@ -146,8 +145,8 @@ namespace uk.org.riseley.puttySessionManager.control.options
             // 
             // pageantTextBox
             // 
-            this.pageantTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.pageantTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pageantTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::uk.org.riseley.puttySessionManager.Properties.Settings.Default, "PageantLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.pageantTextBox.Location = new System.Drawing.Point(123, 135);
             this.pageantTextBox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);

@@ -79,15 +79,17 @@ namespace uk.org.riseley.puttySessionManager.control.options
             this.filezillaTableLayout.Controls.Add(this.filezillaTextBox, 1, 3);
             this.filezillaTableLayout.Controls.Add(this.locateFileZillaButton, 0, 3);
             this.filezillaTableLayout.Controls.Add(this.sshAuthCheckBox, 0, 2);
+            this.filezillaTableLayout.Dock = System.Windows.Forms.DockStyle.Fill;
             this.filezillaTableLayout.Location = new System.Drawing.Point(0, 0);
             this.filezillaTableLayout.Name = "filezillaTableLayout";
+            this.filezillaTableLayout.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.filezillaTableLayout.RowCount = 4;
             this.filezillaTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 27.43363F));
             this.filezillaTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72.56637F));
             this.filezillaTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.filezillaTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
             this.filezillaTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.filezillaTableLayout.Size = new System.Drawing.Size(362, 157);
+            this.filezillaTableLayout.Size = new System.Drawing.Size(403, 207);
             this.filezillaTableLayout.TabIndex = 24;
             // 
             // fzVerGroupBox
@@ -97,9 +99,9 @@ namespace uk.org.riseley.puttySessionManager.control.options
             this.fzVerGroupBox.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::uk.org.riseley.puttySessionManager.Properties.Settings.Default, "FileZillaEnabled", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.fzVerGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fzVerGroupBox.Enabled = global::uk.org.riseley.puttySessionManager.Properties.Settings.Default.FileZillaEnabled;
-            this.fzVerGroupBox.Location = new System.Drawing.Point(3, 30);
+            this.fzVerGroupBox.Location = new System.Drawing.Point(3, 44);
             this.fzVerGroupBox.Name = "fzVerGroupBox";
-            this.fzVerGroupBox.Size = new System.Drawing.Size(234, 68);
+            this.fzVerGroupBox.Size = new System.Drawing.Size(261, 104);
             this.fzVerGroupBox.TabIndex = 28;
             this.fzVerGroupBox.TabStop = false;
             this.fzVerGroupBox.Text = "FileZilla Version";
@@ -116,16 +118,16 @@ namespace uk.org.riseley.puttySessionManager.control.options
             this.wsVerTableLayout.Name = "wsVerTableLayout";
             this.wsVerTableLayout.RowCount = 1;
             this.wsVerTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.wsVerTableLayout.Size = new System.Drawing.Size(228, 49);
+            this.wsVerTableLayout.Size = new System.Drawing.Size(255, 85);
             this.wsVerTableLayout.TabIndex = 2;
             // 
             // fzVer2RadioButton
             // 
-            this.fzVer2RadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.fzVer2RadioButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.fzVer2RadioButton.Checked = true;
-            this.fzVer2RadioButton.Location = new System.Drawing.Point(3, 16);
+            this.fzVer2RadioButton.Location = new System.Drawing.Point(3, 34);
             this.fzVer2RadioButton.Name = "fzVer2RadioButton";
-            this.fzVer2RadioButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.fzVer2RadioButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.fzVer2RadioButton.Size = new System.Drawing.Size(108, 17);
             this.fzVer2RadioButton.TabIndex = 0;
             this.fzVer2RadioButton.TabStop = true;
@@ -135,10 +137,10 @@ namespace uk.org.riseley.puttySessionManager.control.options
             // 
             // fzVer3RadioButton
             // 
-            this.fzVer3RadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.fzVer3RadioButton.Location = new System.Drawing.Point(117, 16);
+            this.fzVer3RadioButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.fzVer3RadioButton.Location = new System.Drawing.Point(130, 34);
             this.fzVer3RadioButton.Name = "fzVer3RadioButton";
-            this.fzVer3RadioButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.fzVer3RadioButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.fzVer3RadioButton.Size = new System.Drawing.Size(108, 17);
             this.fzVer3RadioButton.TabIndex = 1;
             this.fzVer3RadioButton.Text = "3.X";
@@ -151,10 +153,10 @@ namespace uk.org.riseley.puttySessionManager.control.options
             this.protocolGroupBox.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::uk.org.riseley.puttySessionManager.Properties.Settings.Default, "FileZillaEnabled", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.protocolGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.protocolGroupBox.Enabled = global::uk.org.riseley.puttySessionManager.Properties.Settings.Default.FileZillaEnabled;
-            this.protocolGroupBox.Location = new System.Drawing.Point(243, 3);
+            this.protocolGroupBox.Location = new System.Drawing.Point(270, 3);
             this.protocolGroupBox.Name = "protocolGroupBox";
             this.filezillaTableLayout.SetRowSpan(this.protocolGroupBox, 3);
-            this.protocolGroupBox.Size = new System.Drawing.Size(116, 118);
+            this.protocolGroupBox.Size = new System.Drawing.Size(130, 168);
             this.protocolGroupBox.TabIndex = 20;
             this.protocolGroupBox.TabStop = false;
             this.protocolGroupBox.Text = "Protocol";
@@ -175,33 +177,31 @@ namespace uk.org.riseley.puttySessionManager.control.options
             this.filezillaProtoTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.filezillaProtoTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.filezillaProtoTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.filezillaProtoTableLayout.Size = new System.Drawing.Size(110, 99);
+            this.filezillaProtoTableLayout.Size = new System.Drawing.Size(124, 149);
             this.filezillaProtoTableLayout.TabIndex = 4;
             // 
             // fzSessionInfoRadioButton
             // 
-            this.fzSessionInfoRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fzSessionInfoRadioButton.AutoSize = true;
             this.fzSessionInfoRadioButton.Checked = true;
             this.fzSessionInfoRadioButton.Location = new System.Drawing.Point(3, 3);
             this.fzSessionInfoRadioButton.Name = "fzSessionInfoRadioButton";
-            this.fzSessionInfoRadioButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.fzSessionInfoRadioButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.fzSessionInfoRadioButton.Size = new System.Drawing.Size(105, 17);
             this.fzSessionInfoRadioButton.TabIndex = 3;
             this.fzSessionInfoRadioButton.TabStop = true;
             this.fzSessionInfoRadioButton.Text = "Use Session Info";
             this.optionsToolTip.SetToolTip(this.fzSessionInfoRadioButton, "Use SFTP and the specified port for sessions defined as SSH,\r\notherwise default t" +
-                    "o FTP on port 21");
+        "o FTP on port 21");
             this.fzSessionInfoRadioButton.UseVisualStyleBackColor = true;
             this.fzSessionInfoRadioButton.CheckedChanged += new System.EventHandler(this.protocolRadioButton_CheckedChanged);
             // 
             // fzFtpsRadioButton
             // 
-            this.fzFtpsRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fzFtpsRadioButton.AutoSize = true;
-            this.fzFtpsRadioButton.Location = new System.Drawing.Point(32, 72);
+            this.fzFtpsRadioButton.Location = new System.Drawing.Point(3, 72);
             this.fzFtpsRadioButton.Name = "fzFtpsRadioButton";
-            this.fzFtpsRadioButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.fzFtpsRadioButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.fzFtpsRadioButton.Size = new System.Drawing.Size(76, 17);
             this.fzFtpsRadioButton.TabIndex = 2;
             this.fzFtpsRadioButton.TabStop = true;
@@ -211,11 +211,10 @@ namespace uk.org.riseley.puttySessionManager.control.options
             // 
             // fzFtpRadioButton
             // 
-            this.fzFtpRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fzFtpRadioButton.AutoSize = true;
-            this.fzFtpRadioButton.Location = new System.Drawing.Point(42, 26);
+            this.fzFtpRadioButton.Location = new System.Drawing.Point(3, 26);
             this.fzFtpRadioButton.Name = "fzFtpRadioButton";
-            this.fzFtpRadioButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.fzFtpRadioButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.fzFtpRadioButton.Size = new System.Drawing.Size(66, 17);
             this.fzFtpRadioButton.TabIndex = 0;
             this.fzFtpRadioButton.TabStop = true;
@@ -225,11 +224,10 @@ namespace uk.org.riseley.puttySessionManager.control.options
             // 
             // fzSftpRadioButton
             // 
-            this.fzSftpRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.fzSftpRadioButton.AutoSize = true;
-            this.fzSftpRadioButton.Location = new System.Drawing.Point(38, 49);
+            this.fzSftpRadioButton.Location = new System.Drawing.Point(3, 49);
             this.fzSftpRadioButton.Name = "fzSftpRadioButton";
-            this.fzSftpRadioButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.fzSftpRadioButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.fzSftpRadioButton.Size = new System.Drawing.Size(70, 17);
             this.fzSftpRadioButton.TabIndex = 1;
             this.fzSftpRadioButton.TabStop = true;
@@ -244,29 +242,29 @@ namespace uk.org.riseley.puttySessionManager.control.options
             this.enableFileZillaCheckBox.Checked = global::uk.org.riseley.puttySessionManager.Properties.Settings.Default.FileZillaEnabled;
             this.filezillaTableLayout.SetColumnSpan(this.enableFileZillaCheckBox, 2);
             this.enableFileZillaCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::uk.org.riseley.puttySessionManager.Properties.Settings.Default, "FileZillaEnabled", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.enableFileZillaCheckBox.Location = new System.Drawing.Point(3, 5);
+            this.enableFileZillaCheckBox.Location = new System.Drawing.Point(3, 12);
             this.enableFileZillaCheckBox.Name = "enableFileZillaCheckBox";
-            this.enableFileZillaCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.enableFileZillaCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.enableFileZillaCheckBox.Size = new System.Drawing.Size(137, 17);
             this.enableFileZillaCheckBox.TabIndex = 0;
             this.enableFileZillaCheckBox.Text = "&Enable FileZilla Support";
             this.optionsToolTip.SetToolTip(this.enableFileZillaCheckBox, "Add support for FileZilla 2.x or 3.x. \r\nFileZilla sessions can be launched from t" +
-                    "he Session Tree.");
+        "he Session Tree.");
             this.enableFileZillaCheckBox.UseVisualStyleBackColor = true;
             // 
             // filezillaTextBox
             // 
-            this.filezillaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.filezillaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.filezillaTableLayout.SetColumnSpan(this.filezillaTextBox, 2);
             this.filezillaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", global::uk.org.riseley.puttySessionManager.Properties.Settings.Default, "FileZillaLocation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.filezillaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::uk.org.riseley.puttySessionManager.Properties.Settings.Default, "FileZillaEnabled", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.filezillaTextBox.Enabled = global::uk.org.riseley.puttySessionManager.Properties.Settings.Default.FileZillaEnabled;
-            this.filezillaTextBox.Location = new System.Drawing.Point(126, 129);
+            this.filezillaTextBox.Location = new System.Drawing.Point(140, 179);
             this.filezillaTextBox.Margin = new System.Windows.Forms.Padding(3, 5, 3, 3);
             this.filezillaTextBox.Name = "filezillaTextBox";
             this.filezillaTextBox.ReadOnly = true;
-            this.filezillaTextBox.Size = new System.Drawing.Size(233, 20);
+            this.filezillaTextBox.Size = new System.Drawing.Size(260, 20);
             this.filezillaTextBox.TabIndex = 18;
             this.filezillaTextBox.Text = global::uk.org.riseley.puttySessionManager.Properties.Settings.Default.FileZillaLocation;
             // 
@@ -276,7 +274,7 @@ namespace uk.org.riseley.puttySessionManager.control.options
             this.locateFileZillaButton.AutoSize = true;
             this.locateFileZillaButton.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::uk.org.riseley.puttySessionManager.Properties.Settings.Default, "FileZillaEnabled", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.locateFileZillaButton.Enabled = global::uk.org.riseley.puttySessionManager.Properties.Settings.Default.FileZillaEnabled;
-            this.locateFileZillaButton.Location = new System.Drawing.Point(12, 127);
+            this.locateFileZillaButton.Location = new System.Drawing.Point(26, 177);
             this.locateFileZillaButton.Name = "locateFileZillaButton";
             this.locateFileZillaButton.Size = new System.Drawing.Size(108, 23);
             this.locateFileZillaButton.TabIndex = 19;
@@ -286,7 +284,7 @@ namespace uk.org.riseley.puttySessionManager.control.options
             // 
             // sshAuthCheckBox
             // 
-            this.sshAuthCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.sshAuthCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.sshAuthCheckBox.AutoSize = true;
             this.sshAuthCheckBox.Checked = global::uk.org.riseley.puttySessionManager.Properties.Settings.Default.FileZillaAttemptKeyAuth;
             this.sshAuthCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -294,14 +292,14 @@ namespace uk.org.riseley.puttySessionManager.control.options
             this.sshAuthCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Enabled", global::uk.org.riseley.puttySessionManager.Properties.Settings.Default, "FileZillaEnabled", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.sshAuthCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::uk.org.riseley.puttySessionManager.Properties.Settings.Default, "FileZillaAttemptKeyAuth", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.sshAuthCheckBox.Enabled = global::uk.org.riseley.puttySessionManager.Properties.Settings.Default.FileZillaEnabled;
-            this.sshAuthCheckBox.Location = new System.Drawing.Point(59, 104);
+            this.sshAuthCheckBox.Location = new System.Drawing.Point(3, 154);
             this.sshAuthCheckBox.Name = "sshAuthCheckBox";
-            this.sshAuthCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.sshAuthCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.sshAuthCheckBox.Size = new System.Drawing.Size(178, 17);
             this.sshAuthCheckBox.TabIndex = 22;
             this.sshAuthCheckBox.Text = "&Attempt SSH Key Auth for SFTP";
             this.optionsToolTip.SetToolTip(this.sshAuthCheckBox, "Attempt to use Pageant for key based authentication\r\nfor SFTP sessions.  Only rel" +
-                    "evant for v2.x.\r\nAlways attempted for v3.x.");
+        "evant for v2.x.\r\nAlways attempted for v3.x.");
             this.sshAuthCheckBox.UseVisualStyleBackColor = true;
             // 
             // FileZillaOptionsControl
@@ -310,7 +308,7 @@ namespace uk.org.riseley.puttySessionManager.control.options
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.filezillaTableLayout);
             this.Name = "FileZillaOptionsControl";
-            this.Size = new System.Drawing.Size(362, 157);
+            this.Size = new System.Drawing.Size(403, 207);
             this.filezillaTableLayout.ResumeLayout(false);
             this.filezillaTableLayout.PerformLayout();
             this.fzVerGroupBox.ResumeLayout(false);

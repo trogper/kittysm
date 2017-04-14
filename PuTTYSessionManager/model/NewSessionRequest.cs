@@ -36,6 +36,8 @@ namespace uk.org.riseley.puttySessionManager.model
                  , sessionName
                  , sessionTemplate.Protocol
                  , sessionTemplate.Portnumber
+                 , sessionTemplate.Authgssapi
+                 , sessionTemplate.Gssapifwd
                  , copyDefaultUsername
                  , launchSession)
         {
@@ -47,6 +49,8 @@ namespace uk.org.riseley.puttySessionManager.model
                         , string sessionName
                         , string protocol
                         , int portnumber
+                        , bool authgssapi
+                        , bool gssapifwd
                         , bool copyDefaultUsername
                         , bool launchSession) 
         {
@@ -58,6 +62,8 @@ namespace uk.org.riseley.puttySessionManager.model
             this.launchSession = launchSession;
             this.protocol = protocol;
             this.portnumber = portnumber;
+            this.authgssapi = authgssapi;
+            this.gssapifwd = gssapifwd;
         }
 
         private Session sessionTemplate;
@@ -112,6 +118,18 @@ namespace uk.org.riseley.puttySessionManager.model
         public int Portnumber
         {
             get { return portnumber; }
+        }
+        private bool authgssapi;
+
+        public bool Authgssapi
+        {
+            get { return authgssapi; }
+        }
+        private bool gssapifwd;
+
+        public bool Gssapifwd
+        {
+            get { return gssapifwd; }
         }
     }
 }
