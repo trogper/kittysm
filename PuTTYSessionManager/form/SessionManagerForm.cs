@@ -22,6 +22,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using Microsoft.Win32;
 using uk.org.riseley.puttySessionManager.model;
 using uk.org.riseley.puttySessionManager.model.eventargs;
 using uk.org.riseley.puttySessionManager.controller;
@@ -76,6 +77,7 @@ namespace uk.org.riseley.puttySessionManager.form
             Application.AddMessageFilter(this);
             EventHandler dialogFontHandler = new EventHandler(this.dialogFontChanged);
             optionsDialog.DialogFontChanged += dialogFontHandler;
+            SystemEvents.DisplaySettingsChanged += OnDisplaySettingsChanged;
         }
 
         /// <summary>
@@ -524,6 +526,23 @@ namespace uk.org.riseley.puttySessionManager.form
             synchronizeForm.resetDialogFont();
             sessionTreeControl1.resetDialogFont();
             sessionListControl1.resetDialogFont();
+        }
+
+        private void OnDisplaySettingsChanged(object sender, EventArgs e)
+        {
+            bool visible = false;
+            foreach (Screen s in Screen.AllScreens)
+            {
+                if (s.WorkingArea.Contains(this.Location))
+                {
+                    visible = true;
+                }
+            }
+
+            if (!visible)
+            {
+                this.SetDesktopLocation(Screen.PrimaryScreen.Bounds.Location.X, Screen.PrimaryScreen.Bounds.Location.Y);
+            }
         }
     }
 }
