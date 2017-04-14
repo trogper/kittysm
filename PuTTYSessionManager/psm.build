@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<project xmlns="http://nant.sf.net/release/0.85/nant.xsd"
+<project xmlns="http://nant.sf.net/release/0.92/nant.xsd"
          name="PuTTY Session Manager"
          default="rebuild"
          basedir="..">
 
   <property name="configuration" value="release"/>
 
-  <property name="dir.nantcontrib" value="C:/apps/nantcontrib-0.85"/>
-  <property name="dir.svn" value="C:/Program Files (x86)/Subversion/bin"/>
-  <property name="dir.nsis" value="C:/Program Files (x86)/NSIS"/>
+  <property name="dir.nantcontrib" value="C:/apps/nantcontrib-0.92"/>
+  <property name="dir.svn" value="C:/Program Files/TortoiseSVN/bin"/>
+  <property name="dir.nsis" value="C:/apps/NSIS"/>
 
   <property name="dir.psmbase" value="PuTTYSessionManager"/>
   <property name="dir.buildinfo" value="${dir.psmbase}/buildinfo"/>

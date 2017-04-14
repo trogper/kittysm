@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2006,2007 David Riseley 
+/*
+ * Copyright (C) 2006,2007 David Riseley
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -19,19 +19,19 @@ using System;
 
 namespace uk.org.riseley.puttySessionManager.model.eventargs
 {
-    public class LaunchSessionEventArgs : EventArgs 
+    public class LaunchSessionEventArgs : EventArgs
     {
         public enum PROGRAM { PUTTY, FILEZILLA, WINSCP, PSFTP };
 
         public LaunchSessionEventArgs()
             : this(null, PROGRAM.PUTTY)
-        {    
+        {
         }
 
         public LaunchSessionEventArgs(Session session)
             : this(session, PROGRAM.PUTTY)
         {
-        }        
+        }
 
         public LaunchSessionEventArgs(Session session, PROGRAM program )
         {

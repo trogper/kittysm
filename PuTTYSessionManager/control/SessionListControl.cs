@@ -1,5 +1,5 @@
-/* 
- * Copyright (C) 2006-2009 David Riseley 
+/*
+ * Copyright (C) 2006-2009 David Riseley
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -41,7 +41,7 @@ namespace uk.org.riseley.puttySessionManager.control
             InitializeComponent();
         }
 
-        
+
         /// <summary>
         /// Load sessions into the list and the system tray
         /// </summary>
@@ -86,7 +86,7 @@ namespace uk.org.riseley.puttySessionManager.control
                 s = (Session)((ToolStripMenuItem)sender).Tag;
             }
 
-            OnLaunchSession(new LaunchSessionEventArgs(s));            
+            OnLaunchSession(new LaunchSessionEventArgs(s));
         }
 
         /// <summary>
@@ -113,7 +113,7 @@ namespace uk.org.riseley.puttySessionManager.control
             }
 
             if ( tsmiArray != null )
-                parent.AddRange(tsmiArray);            
+                parent.AddRange(tsmiArray);
 
             // Now resume the layout
             cms.ResumeLayout();

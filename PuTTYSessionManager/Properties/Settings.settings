@@ -243,5 +243,17 @@
     <Setting Name="PSFTPLocation" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Program Files\PuTTY\psftp.exe</Value>
     </Setting>
+    <Setting Name="ConEmuEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ConEmuCLocation" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files\ConEmu\ConEmu\ConEmuC.exe</Value>
+    </Setting>
+    <Setting Name="ConEmuLaunchAction" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Primary</Value>
+    </Setting>
+    <Setting Name="ConEmuLocation" Type="System.String" Scope="User">
+      <Value Profile="(Default)">C:\Program Files\ConEmu\ConEmu64.exe</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

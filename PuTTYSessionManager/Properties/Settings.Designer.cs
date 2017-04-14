@@ -983,5 +983,53 @@ namespace uk.org.riseley.puttySessionManager.Properties {
                 this["PSFTPLocation"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool ConEmuEnabled {
+            get {
+                return ((bool)(this["ConEmuEnabled"]));
+            }
+            set {
+                this["ConEmuEnabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\ConEmu\\ConEmu\\ConEmuC.exe")]
+        public string ConEmuCLocation {
+            get {
+                return ((string)(this["ConEmuCLocation"]));
+            }
+            set {
+                this["ConEmuCLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Primary")]
+        public string ConEmuLaunchAction {
+            get {
+                return ((string)(this["ConEmuLaunchAction"]));
+            }
+            set {
+                this["ConEmuLaunchAction"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Program Files\\ConEmu\\ConEmu64.exe")]
+        public string ConEmuLocation {
+            get {
+                return ((string)(this["ConEmuLocation"]));
+            }
+            set {
+                this["ConEmuLocation"] = value;
+            }
+        }
     }
 }

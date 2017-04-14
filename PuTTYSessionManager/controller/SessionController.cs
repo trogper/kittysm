@@ -26,6 +26,7 @@ using uk.org.riseley.puttySessionManager.model;
 using uk.org.riseley.puttySessionManager.model.eventargs;
 using System.Windows.Forms;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace uk.org.riseley.puttySessionManager.controller
 {
@@ -502,20 +503,53 @@ namespace uk.org.riseley.puttySessionManager.controller
         public string launchSession(string sessionName)
         {
             String puttyExec = Properties.Settings.Default.PuttyLocation;
+            String conEmuCExec = Properties.Settings.Default.ConEmuCLocation;
+            String conEmuExec = Properties.Settings.Default.ConEmuLocation;
+            bool conEmuEnabled = Properties.Settings.Default.ConEmuEnabled;
+
+            String errMsg = "";
+            
             Process p = new Process();
-            p.StartInfo.FileName = puttyExec;
-            p.StartInfo.Arguments = "-load \"" + sessionName + "\"";
+
+            int sleepTime = 0;
+
+            if (conEmuEnabled == false) { 
+                p.StartInfo.FileName = puttyExec;
+                p.StartInfo.Arguments = "-load \"" + sessionName + "\"";
+            }
+            else
+            {
+                if ( Process.GetProcessesByName("ConEmu64").Length > 0 || 
+                     Process.GetProcessesByName("ConEmu").Length > 0 ) 
+                {
+                    p.StartInfo.FileName = conEmuCExec;
+                    p.StartInfo.Arguments = "/C \"" + puttyExec + "\" -new_console -load \"" + sessionName + "\"";
+                }
+                else
+                {
+                    p.StartInfo.FileName = conEmuExec;
+                    p.StartInfo.Arguments = "/cmd \"" + puttyExec + "\" -new_console -load \"" + sessionName + "\"";
+                    // Give conEmu 2 secs to start
+                    sleepTime = 2000;
+                }
+            }
 
             bool result = false;
-            String errMsg = "";
-            try
+            if (p.StartInfo.FileName != "")
             {
-                result = p.Start();
-            }
-            catch (Exception ex)
-            {
-                result = false;
-                errMsg = ex.Message;
+                try
+                {
+                    result = p.Start();
+                    if (sleepTime > 0)
+                    {
+                        System.Threading.Thread.Sleep(sleepTime);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    result = false;
+                    errMsg = ex.Message;
+                }
             }
             p.Close();
 

@@ -85,6 +85,12 @@
     <Compile Include="controller\SessionAttributes.cs" />
     <Compile Include="controller\ISessionExport.cs" />
     <Compile Include="controller\ISessionStorage.cs" />
+    <Compile Include="control\options\ConEmuOptionsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="control\options\ConEmuOptionsControl.Designer.cs">
+      <DependentUpon>ConEmuOptionsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="control\options\FileZillaOptionsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -263,6 +269,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="control\options\ConEmuOptionsControl.resx">
+      <DependentUpon>ConEmuOptionsControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="control\options\FileZillaOptionsControl.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FileZillaOptionsControl.cs</DependentUpon>

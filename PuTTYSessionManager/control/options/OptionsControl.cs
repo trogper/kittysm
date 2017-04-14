@@ -28,7 +28,7 @@ namespace uk.org.riseley.puttySessionManager.control.options
 {
     public partial class OptionsControl : UserControl
     {
-        protected enum FileDialogType { PUTTY, PAGEANT, PAGEANT_KEYS, FILEZILLA, WINSCP, WINSCPINI, CSV, PSFTP };
+        protected enum FileDialogType { PUTTY, PAGEANT, PAGEANT_KEYS, FILEZILLA, WINSCP, WINSCPINI, CSV, PSFTP, CONEMUC, CONEMU };
 
         public OptionsControl()
         {
@@ -78,6 +78,14 @@ namespace uk.org.riseley.puttySessionManager.control.options
                 case FileDialogType.PSFTP:
                     filename = "psftp.exe";
                     currentFile = Properties.Settings.Default.PSFTPLocation;
+                    break;
+                case FileDialogType.CONEMUC:
+                    filename = "conemuc.exe";
+                    currentFile = Properties.Settings.Default.ConEmuCLocation;
+                    break;
+                case FileDialogType.CONEMU:
+                    filename = "conemu*.exe";
+                    currentFile = Properties.Settings.Default.ConEmuLocation;
                     break;
             }
 
