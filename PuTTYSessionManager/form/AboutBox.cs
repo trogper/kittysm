@@ -25,7 +25,7 @@ using System.Diagnostics;
 
 namespace uk.org.riseley.puttySessionManager.form
 {
-    partial class AboutBox : Form
+    public partial class AboutBox : Form
     {
         private UpdateForm uf = null; 
 

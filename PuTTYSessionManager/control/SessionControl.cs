@@ -25,6 +25,7 @@ using System.Windows.Forms;
 using uk.org.riseley.puttySessionManager.model;
 using uk.org.riseley.puttySessionManager.model.eventargs;
 using uk.org.riseley.puttySessionManager.controller;
+using uk.org.riseley.puttySessionManager.form;
 
 namespace uk.org.riseley.puttySessionManager.control
 {
@@ -54,6 +55,41 @@ namespace uk.org.riseley.puttySessionManager.control
         /// Fired when a delete session(s) request is made
         /// </summary>
         public event DeleteSessionsEventHandler DeleteSessions;
+
+        /// <summary>
+        /// Fired when the options dialog is requested
+        /// </summary>
+        public event System.EventHandler LaunchOptions;
+
+        /// <summary>
+        /// Fired when the about dialog is requested
+        /// </summary>
+        public event System.EventHandler LaunchAbout;
+
+        /// <summary>
+        /// Fired when the Session Editor dialog is requested
+        /// </summary>
+        public event System.EventHandler LaunchSessionEditor;
+
+        /// <summary>
+        /// Fired when the Session Hotkeys dialog is requested
+        /// </summary>
+        public event System.EventHandler LaunchSessionHotkeys;
+
+        /// <summary>
+        /// Fired when the Synchronise Sessionss dialog is requested
+        /// </summary>
+        public event System.EventHandler LaunchSynchroniseSessions;
+
+        /// <summary>
+        /// Fired when exit request is made
+        /// </summary>
+        public event System.EventHandler ExitRequest;
+
+        /// <summary>
+        /// Fired when a request to switch session control is made
+        /// </summary>
+        public event System.EventHandler SwitchDisplay;
 
         /// <summary>
         /// Event handler for the <code>LaunchSessionEvent</code>
@@ -105,8 +141,17 @@ namespace uk.org.riseley.puttySessionManager.control
             if (LaunchSession != null)
             {
                 // Hide the form if the option has been requested
-                if (Properties.Settings.Default.MinimizeOnUse == true && ParentForm.Visible)
-                    ParentForm.Hide();
+                if (Properties.Settings.Default.MinimizeOnUse == true)
+                {
+                    if (ParentForm is SessionManagerForm)
+                    {
+                        ((SessionManagerForm)ParentForm).hideApplication();
+                    }
+                    else
+                    {   
+                        ParentForm.Hide();
+                    }
+                }
                 LaunchSession(this, se);
             }
         }
@@ -134,6 +179,63 @@ namespace uk.org.riseley.puttySessionManager.control
                 DeleteSessions(this, ce);
             }
         }
+
+        protected virtual void OnLaunchOptions(EventArgs e)
+        {
+            if (LaunchOptions != null)
+            {
+                LaunchOptions(this, e);
+            }
+        }
+
+        protected virtual void OnLaunchAbout(EventArgs e)
+        {
+            if (LaunchAbout != null)
+            {
+                LaunchAbout(this, e);
+            }
+        }
+
+        protected virtual void OnLaunchSessionEditor(EventArgs e)
+        {
+            if (LaunchSessionEditor != null)
+            {
+                LaunchSessionEditor(this, e);
+            }
+        }
+
+        protected virtual void OnLaunchSessionHotkeys(EventArgs e)
+        {
+            if (LaunchSessionHotkeys != null)
+            {
+                LaunchSessionHotkeys(this, e);
+            }
+        }
+
+        protected virtual void OnLaunchSynchroniseSessions(EventArgs e)
+        {
+            if (LaunchSynchroniseSessions != null)
+            {
+                LaunchSynchroniseSessions(this, e);
+            }
+        }
+
+        protected virtual void OnExitRequest(EventArgs e)
+        {
+            if (ExitRequest != null)
+            {
+                ExitRequest(this, e);
+            }
+        }
+
+        protected virtual void OnSwitchDisplay(Object sender,EventArgs e)
+        {
+            if (SwitchDisplay != null)
+            {
+                SwitchDisplay(sender, e);
+            }
+        }
+
 
         public virtual void getSessionMenuItems(ContextMenuStrip cms, ToolStripItemCollection parent)
         {
@@ -197,6 +299,41 @@ namespace uk.org.riseley.puttySessionManager.control
 
         public virtual void resetDialogFont()
         {
+        }
+
+        private void displayTreeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OnSwitchDisplay(sender,e);
+        }
+
+        private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OnLaunchOptions(e);
+        }
+
+        private void sessionEditorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OnLaunchSessionEditor(e);
+        }
+
+        private void sessionHotkeysToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OnLaunchSessionHotkeys(e);
+        }
+
+        private void synchronizeSessionsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OnLaunchSynchroniseSessions(e);
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OnLaunchAbout(e);
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OnExitRequest(e);
         }
     }
 }

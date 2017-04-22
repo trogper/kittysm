@@ -119,7 +119,14 @@ namespace uk.org.riseley.puttySessionManager
                 smf.doStartupActions();
 
                 // Only make the form visible if the required
-                smf.Visible = !(Properties.Settings.Default.MinimizeOnStart);
+                if (Properties.Settings.Default.MinimizeOnStart == true)
+                {
+                    smf.hideApplication();
+                }
+                else
+                {
+                    smf.showApplication();
+                }
 
                 return true;
             }

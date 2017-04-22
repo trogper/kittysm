@@ -45,6 +45,8 @@ namespace uk.org.riseley.puttySessionManager.form
 
         private HotkeyController hkc;
 
+        private bool visibleState = false;
+
         private class User32
         {
             [DllImport("user32.dll")]
@@ -78,6 +80,22 @@ namespace uk.org.riseley.puttySessionManager.form
             EventHandler dialogFontHandler = new EventHandler(this.dialogFontChanged);
             optionsDialog.DialogFontChanged += dialogFontHandler;
             SystemEvents.DisplaySettingsChanged += OnDisplaySettingsChanged;
+
+            sessionTreeControl.LaunchAbout += sessionControl_ShowAbout;
+            sessionTreeControl.LaunchOptions += sessionControl_ShowOptions;
+            sessionTreeControl.LaunchSessionEditor += sessionEditorToolStripMenuItem_Click;
+            sessionTreeControl.LaunchSessionHotkeys += sessionHotkeysToolStripMenuItem_Click;
+            sessionTreeControl.LaunchSynchroniseSessions += synchronizeSessionsToolStripMenuItem_Click;
+            sessionTreeControl.ExitRequest += exitToolStripMenuItem_Click;
+            sessionTreeControl.SwitchDisplay += sessionTreeControl_SwitchDisplay;
+
+            sessionListControl.LaunchAbout += sessionControl_ShowAbout;
+            sessionListControl.LaunchOptions += sessionControl_ShowOptions;
+            sessionListControl.LaunchSessionEditor += sessionEditorToolStripMenuItem_Click;
+            sessionListControl.LaunchSessionHotkeys += sessionHotkeysToolStripMenuItem_Click;
+            sessionListControl.LaunchSynchroniseSessions += synchronizeSessionsToolStripMenuItem_Click;
+            sessionListControl.ExitRequest += exitToolStripMenuItem_Click;
+            sessionListControl.SwitchDisplay += sessionListControl_SwitchDisplay;
         }
 
         /// <summary>
@@ -161,7 +179,7 @@ namespace uk.org.riseley.puttySessionManager.form
 
             // Expand the tree if requested on startup
             if (Properties.Settings.Default.ExpandTreeOnStartup)
-                sessionTreeControl1.expandFullTree();
+                sessionTreeControl.expandFullTree();
 
             // Setup the display
             setDisplay();
@@ -223,7 +241,7 @@ namespace uk.org.riseley.puttySessionManager.form
             {
                 loadSessionContextMenu.Visible = false;
             }
-            showApplication(!this.Visible);
+            switchApplicationVisibility();
         }
 
         /// <summary>
@@ -244,7 +262,7 @@ namespace uk.org.riseley.puttySessionManager.form
             }
             else if (e.Button == MouseButtons.Middle)
             {
-                showApplication(!this.Visible);
+                switchApplicationVisibility();
             }
         }
 
@@ -254,8 +272,18 @@ namespace uk.org.riseley.puttySessionManager.form
         /// <param name="visible"></param>
         private void showApplication(bool visible)
         {
-            Visible = visible;          
-            if (Visible)
+            visibleState = visible;
+
+            if (Properties.Settings.Default.ShowInTaskbar == true)
+            {
+                Visible = true;
+            }
+            else
+            {
+                Visible = visibleState;
+            }
+
+            if (visibleState)
             {
                 // If the window has been minimized
                 // bring it back to it's normal size
@@ -268,6 +296,12 @@ namespace uk.org.riseley.puttySessionManager.form
                 // Bring the window to the front
                 User32.SetForegroundWindow();
             }
+            else
+            {
+                WindowState = FormWindowState.Minimized;
+            }
+
+
         }
 
         /// <summary>
@@ -276,6 +310,22 @@ namespace uk.org.riseley.puttySessionManager.form
         public void showApplication()
         {
             showApplication(true);
+        }
+
+        /// <summary>
+        /// Allow other parts of the code to request hide of the main window
+        /// </summary>
+        public void hideApplication()
+        {
+            showApplication(false);
+        }
+
+        /// <summary>
+        /// Allow other parts of the code to switch the visibility of the main window
+        /// </summary>
+        public void switchApplicationVisibility()
+        {
+            showApplication((visibleState==false));
         }
 
         private void sessionControl_LaunchSession(object sender, LaunchSessionEventArgs se)
@@ -325,6 +375,16 @@ namespace uk.org.riseley.puttySessionManager.form
             }
         }
 
+        private void sessionTreeControl_SwitchDisplay(object sender, EventArgs e)
+        {
+            displayTreeToolStripMenuItem.Checked = false;
+        }
+
+        private void sessionListControl_SwitchDisplay(object sender, EventArgs e)
+        {
+            displayTreeToolStripMenuItem.Checked = true;
+        }
+
         private void displayTreeToolStripMenuItem_CheckStateChanged(object sender, EventArgs e)
         {
             setDisplay();
@@ -335,13 +395,13 @@ namespace uk.org.riseley.puttySessionManager.form
 
             if (displayTreeToolStripMenuItem.Checked == true)
             {
-                currentSessionControl = sessionTreeControl1;
-                hiddenSessionControl = sessionListControl1;
+                currentSessionControl = sessionTreeControl;
+                hiddenSessionControl = sessionListControl;
             }
             else
             {
-                currentSessionControl = sessionListControl1;
-                hiddenSessionControl = sessionTreeControl1;            
+                currentSessionControl = sessionListControl;
+                hiddenSessionControl = sessionTreeControl;            
             }
 
             this.SuspendLayout();
@@ -374,10 +434,10 @@ namespace uk.org.riseley.puttySessionManager.form
             Keys keyCode = (Keys)(int)m.WParam & Keys.KeyCode;
             if (m.Msg == hkc.WM_KEYDOWN &&
                 keyCode == Keys.Escape &&
-                this.Visible == true &&
+                this.visibleState == true &&
                 this.ContainsFocus == true )
             {
-                showApplication(false);
+                hideApplication();
             }
             else if (m.Msg == hkc.WM_HOTKEY)
             {
@@ -399,7 +459,7 @@ namespace uk.org.riseley.puttySessionManager.form
             // If it's the minimize hotkey switch the display state
             if (id == (int)HotkeyController.HotKeyId.HKID_MINIMIZE)
             {
-                showApplication(!this.Visible);                
+                switchApplicationVisibility();                
                 return;
             }
 
@@ -500,19 +560,6 @@ namespace uk.org.riseley.puttySessionManager.form
             sessionControl_LaunchSession(this, new LaunchSessionEventArgs());
         }
 
-        /// <summary>
-        /// Convert the minimize request into a hide
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void SessionManagerForm_Resize(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Minimized)
-            {
-                showApplication(false);
-            }   
-        }
-
         private void synchronizeSessionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             synchronizeForm.Show();
@@ -524,8 +571,8 @@ namespace uk.org.riseley.puttySessionManager.form
             sessionEditor.resetDialogFont();
             hotKeyChooser.resetDialogFont();
             synchronizeForm.resetDialogFont();
-            sessionTreeControl1.resetDialogFont();
-            sessionListControl1.resetDialogFont();
+            sessionTreeControl.resetDialogFont();
+            sessionListControl.resetDialogFont();
         }
 
         private void OnDisplaySettingsChanged(object sender, EventArgs e)

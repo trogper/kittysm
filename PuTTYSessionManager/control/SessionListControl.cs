@@ -39,6 +39,8 @@ namespace uk.org.riseley.puttySessionManager.control
         public SessionListControl() : base()
         {
             InitializeComponent();
+            // Override the text for the switch display menu item
+            swtichDisplayToolStripMenuItem.Text = "Display Tree";
         }
 
 

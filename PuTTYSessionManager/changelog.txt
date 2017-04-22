@@ -6,19 +6,23 @@ Minor release with small enhancements
 
 Feature requests / enhancements:
 
-Not Tracked:  Changed newPort and existingPort to newPortNumber and existingPortNumber for consistency. - Ken Sharpe
+Not Tracked: Ensure "Show in taskbar" option is always reflected, and add support for environments
+             where the system tray is not visible by adding additional context menu items to the 
+             session control
 
-Not Tracked:  Added AuthGSSAPI and GssapiFwd attributes to session. 
-              Added "Use GSS Options" to Options WinSCP Panel along with some reformatting.
-              Added Single Signon to WinSCP invocation. - Ken Sharpe
+Not Tracked: Changed newPort and existingPort to newPortNumber and existingPortNumber for consistency. - Ken Sharpe
 
-Not Tracked:  Updated default location for PuTTY, WinSCP, and FileZilla - Ken Sharpe
+Not Tracked: Added AuthGSSAPI and GssapiFwd attributes to session. 
+             Added "Use GSS Options" to Options WinSCP Panel along with some reformatting.
+             Added Single Signon to WinSCP invocation. - Ken Sharpe
 
-Not Tracked:  Changed Bullets and Checkboxes on Options to be left-to-right. - Ken Sharpe
+Not Tracked: Updated default location for PuTTY, WinSCP, and FileZilla - Ken Sharpe
 
-Not Tracked:  On Options General tab - adjusted panel to make locate sftp.exe visible. - Ken Sharpe
+Not Tracked: Changed Bullets and Checkboxes on Options to be left-to-right. - Ken Sharpe
 
-Not Tracked:  On Options WinSCP tab - Updated Preferred Protcol selections to trigger a button event. - Ken Sharpe
+Not Tracked: On Options General tab - adjusted panel to make locate sftp.exe visible. - Ken Sharpe
+
+Not Tracked: On Options WinSCP tab - Updated Preferred Protcol selections to trigger a button event. - Ken Sharpe
 
 #50 [PATCH] Move window off of missing monitors - lordgilman
 
