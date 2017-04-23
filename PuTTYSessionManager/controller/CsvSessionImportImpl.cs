@@ -143,8 +143,6 @@ namespace uk.org.riseley.puttySessionManager.controller
             s.Hostname = rec.Hostname;
             s.Username = rec.Username;
             s.Portnumber = rec.Portnumber;
-            s.Authgssapi = rec.Authgssapi;
-            s.Gssapifwd = rec.Gssapifwd;
             s.Protocol = rec.Protocol;
             return s;
 

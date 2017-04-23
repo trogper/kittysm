@@ -1,4 +1,4 @@
-PuTTY Session Manager v0.50 ( 17-04-2017 )
+PuTTY Session Manager v0.50 ( 23-04-2017 )
 =============================================
 Tenth release of PuTTY Session Manager
 
@@ -9,8 +9,6 @@ Feature requests / enhancements:
 Not Tracked: Ensure "Show in taskbar" option is always reflected, and add support for environments
              where the system tray is not visible by adding additional context menu items to the 
              session control
-
-Not Tracked: Changed newPort and existingPort to newPortNumber and existingPortNumber for consistency. - Ken Sharpe
 
 Not Tracked: Added AuthGSSAPI and GssapiFwd attributes to session. 
              Added "Use GSS Options" to Options WinSCP Panel along with some reformatting.

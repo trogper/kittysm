@@ -62,12 +62,10 @@ namespace uk.org.riseley.puttySessionManager.model
                 this.action = ACTION.DELETE;
             else if (existingSession == null)
                 this.action = ACTION.ADD;
-            else if ((newSession.Hostname.Equals(existingSession.Hostname)) &&
-                     (newSession.FolderName.Equals(existingSession.FolderName)) &&
-                     (newSession.Protocol.Equals(existingSession.Protocol)) &&
-                     (newSession.Portnumber == existingSession.Portnumber) &&
-                     (newSession.Authgssapi == existingSession.Authgssapi) &&
-                     (newSession.Gssapifwd == existingSession.Gssapifwd))
+            else if (((newSession.Hostname ?? "")  == (existingSession.Hostname ?? "")) &&
+                     ((newSession.FolderName ?? "") == (existingSession.FolderName ?? "")) &&
+                     ((newSession.Protocol ?? "" ) == (existingSession.Protocol ?? "")) &&
+                     (newSession.Portnumber == existingSession.Portnumber))
                 this.action = ACTION.NONE;
             else
                 this.action = ACTION.UPDATE;

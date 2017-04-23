@@ -152,10 +152,6 @@ namespace uk.org.riseley.puttySessionManager.control
             string existingProtocol = "";
             string newPortnumber = "";
             string existingPortnumber = "";
-            string newAuthGSSAPI = "";
-            string existingAuthGSSAPI = "";
-            string newGssapiFwd = "";
-            string existingGssapiFwd = "";
 
             if (action.NewSession != null)
             {
@@ -164,8 +160,6 @@ namespace uk.org.riseley.puttySessionManager.control
                 newSessionHostname = action.NewSession.Hostname;
                 newProtocol = action.NewSession.Protocol;
                 newPortnumber = action.NewSession.Portnumber.ToString();
-                newAuthGSSAPI = action.NewSession.Authgssapi.ToString();
-                newGssapiFwd = action.NewSession.Gssapifwd.ToString();
             }
 
             if (action.ExistingSession != null)
@@ -183,8 +177,6 @@ namespace uk.org.riseley.puttySessionManager.control
                 existingSessionHostname = action.ExistingSession.Hostname;
                 existingProtocol = action.ExistingSession.Protocol;
                 existingPortnumber = action.ExistingSession.Portnumber.ToString();
-                existingAuthGSSAPI = action.ExistingSession.Authgssapi.ToString();
-                existingGssapiFwd = action.ExistingSession.Gssapifwd.ToString();
             }
 
             String[] cellValues = new String[] {    sessionName
@@ -196,10 +188,6 @@ namespace uk.org.riseley.puttySessionManager.control
                                                   , newProtocol
                                                   , existingPortnumber
                                                   , newPortnumber
-                                                  , existingAuthGSSAPI
-                                                  , newAuthGSSAPI
-                                                  , existingGssapiFwd
-                                                  , newGssapiFwd
                                                   , action.getActionDescription()
                                                   , getAction(action.Action)
                                                 };
