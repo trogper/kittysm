@@ -19,13 +19,14 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using FileHelpers;
+using FileHelpers.Events;
 
 namespace uk.org.riseley.puttySessionManager.model
 {
     [IgnoreEmptyLines()]
-    [IgnoreCommentedLines("#", true)]
     [DelimitedRecord(",")]
-    public sealed class CsvRecord
+    [IgnoreFirst]
+    public sealed class CsvRecord : INotifyRead
     {
 
         public CsvRecord()
@@ -43,61 +44,78 @@ namespace uk.org.riseley.puttySessionManager.model
         }
 
         [FieldQuoted('"', QuoteMode.OptionalForRead, MultilineMode.AllowForRead)]
-        private String mSessionName;
+        [FieldOrder(1)]
+        private String sessionName;
 
         public String SessionName
         {
-            get { return mSessionName; }
-            set { mSessionName = value; }
+            get { return sessionName; }
+            set { sessionName = value; }
         }
 
-
         [FieldQuoted('"', QuoteMode.OptionalForRead, MultilineMode.AllowForRead)]
-        private String mFolderName;
+        [FieldOrder(2)]
+        private String folderName;
 
         public String FolderName
         {
-            get { return mFolderName; }
-            set { mFolderName = value; }
+            get { return folderName; }
+            set { folderName = value; }
         }
 
-
         [FieldQuoted('"', QuoteMode.OptionalForRead, MultilineMode.AllowForRead)]
-        private String mUsername;
+        [FieldOrder(3)]
+        private String username;
 
         public String Username
         {
-            get { return mUsername; }
-            set { mUsername = value; }
+            get { return username; }
+            set { username = value; }
         }
 
-
         [FieldQuoted('"', QuoteMode.OptionalForRead, MultilineMode.AllowForRead)]
-        private String mHostname;
+        [FieldOrder(4)]
+        private String hostname;
 
         public String Hostname
         {
-            get { return mHostname; }
-            set { mHostname = value; }
+            get { return hostname; }
+            set { hostname = value; }
         }
 
         [FieldQuoted('"', QuoteMode.OptionalForRead, MultilineMode.AllowForRead)]
-        private String mProtocol;
+        [FieldOrder(5)]
+        private String protocol;
 
         public String Protocol
         {
-            get { return mProtocol; }
-            set { mProtocol = value; }
+            get { return protocol; }
+            set { protocol = value; }
         }
 
-
         [FieldQuoted('"', QuoteMode.OptionalForRead, MultilineMode.AllowForRead)]
-        private int mPortnumber;
+        [FieldOrder(6)]
+        private int portnumber;
 
         public int Portnumber
         {
-            get { return mPortnumber; }
-            set { mPortnumber = value; }
+            get { return portnumber; }
+            set { portnumber = value; }
+        }
+
+        public void AfterRead(AfterReadEventArgs e)
+        {
+        }
+
+        /**
+         * Skip commented lines in the source file
+         */
+        public void BeforeRead(BeforeReadEventArgs e)
+        {
+            if (e.RecordLine.StartsWith("#"))
+            {
+                e.SkipThisRecord = true;
+            }
         }
     }
 }

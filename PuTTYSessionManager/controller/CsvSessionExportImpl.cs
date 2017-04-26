@@ -66,6 +66,7 @@ namespace uk.org.riseley.puttySessionManager.controller
         public int saveSessionsToFile(List<Session> sessionList, string fileName)
         {
             FileHelperEngine<CsvRecord> engine = new FileHelperEngine<CsvRecord>();
+            engine.HeaderText = engine.GetFileHeader();
             engine.WriteFile(fileName, createCsvRecords(sessionList));           
             return engine.TotalRecords;
         }

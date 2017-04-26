@@ -35,7 +35,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("PuTTY Session Manager")]
-[assembly: AssemblyCopyright("Copyright © David Riseley 2006 - 2010")]
+[assembly: AssemblyCopyright("Copyright © David Riseley 2006 - 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
