@@ -71,7 +71,7 @@ namespace uk.org.riseley.puttySessionManager.form
             // 
             this.systrayIcon.ContextMenuStrip = this.sysTrayContextMenu;
             this.systrayIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("systrayIcon.Icon")));
-            this.systrayIcon.Text = "PuTTY Session Manager";
+            this.systrayIcon.Text = "KiTTY Session Manager";
             this.systrayIcon.MouseClick += new System.Windows.Forms.MouseEventHandler(this.systrayIcon_MouseClick);
             this.systrayIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.systrayIcon_MouseDoubleClick);
             // 
@@ -93,12 +93,12 @@ namespace uk.org.riseley.puttySessionManager.form
             this.sysTrayContextMenu.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.sysTrayContextMenu.ShowCheckMargin = true;
             this.sysTrayContextMenu.ShowImageMargin = false;
-            this.sysTrayContextMenu.Size = new System.Drawing.Size(188, 236);
+            this.sysTrayContextMenu.Size = new System.Drawing.Size(186, 214);
             // 
             // newSessionToolStripMenuItem
             // 
             this.newSessionToolStripMenuItem.Name = "newSessionToolStripMenuItem";
-            this.newSessionToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.newSessionToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.newSessionToolStripMenuItem.Text = "New Session";
             this.newSessionToolStripMenuItem.Click += new System.EventHandler(this.newSessionToolStripMenuItem_Click);
             // 
@@ -108,66 +108,66 @@ namespace uk.org.riseley.puttySessionManager.form
             this.displayTreeToolStripMenuItem.CheckOnClick = true;
             this.displayTreeToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.displayTreeToolStripMenuItem.Name = "displayTreeToolStripMenuItem";
-            this.displayTreeToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.displayTreeToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.displayTreeToolStripMenuItem.Text = "&Display Tree";
             this.displayTreeToolStripMenuItem.CheckStateChanged += new System.EventHandler(this.displayTreeToolStripMenuItem_CheckStateChanged);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(184, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(182, 6);
             // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.optionsToolStripMenuItem.Text = "&Options";
             this.optionsToolStripMenuItem.Click += new System.EventHandler(this.sessionControl_ShowOptions);
             // 
             // refreshSessionsToolStripMenuItem
             // 
             this.refreshSessionsToolStripMenuItem.Name = "refreshSessionsToolStripMenuItem";
-            this.refreshSessionsToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.refreshSessionsToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.refreshSessionsToolStripMenuItem.Text = "&Refresh Sessions";
             this.refreshSessionsToolStripMenuItem.Click += new System.EventHandler(this.refreshSessionsToolStripMenuItem_Click);
             // 
             // sessionEditorToolStripMenuItem
             // 
             this.sessionEditorToolStripMenuItem.Name = "sessionEditorToolStripMenuItem";
-            this.sessionEditorToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.sessionEditorToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.sessionEditorToolStripMenuItem.Text = "Session &Editor";
             this.sessionEditorToolStripMenuItem.Click += new System.EventHandler(this.sessionEditorToolStripMenuItem_Click);
             // 
             // sessionHotkeysToolStripMenuItem
             // 
             this.sessionHotkeysToolStripMenuItem.Name = "sessionHotkeysToolStripMenuItem";
-            this.sessionHotkeysToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.sessionHotkeysToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.sessionHotkeysToolStripMenuItem.Text = "Session &Hotkeys";
             this.sessionHotkeysToolStripMenuItem.Click += new System.EventHandler(this.sessionHotkeysToolStripMenuItem_Click);
             // 
             // synchronizeSessionsToolStripMenuItem
             // 
             this.synchronizeSessionsToolStripMenuItem.Name = "synchronizeSessionsToolStripMenuItem";
-            this.synchronizeSessionsToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.synchronizeSessionsToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.synchronizeSessionsToolStripMenuItem.Text = "&Synchronize Sessions";
             this.synchronizeSessionsToolStripMenuItem.Click += new System.EventHandler(this.synchronizeSessionsToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(184, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(182, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.aboutToolStripMenuItem.Text = "&About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.sessionControl_ShowAbout);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(185, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -178,27 +178,27 @@ namespace uk.org.riseley.puttySessionManager.form
             this.loadSessionContextMenu.ShowImageMargin = false;
             this.loadSessionContextMenu.Size = new System.Drawing.Size(36, 4);
             // 
-            // sessionTreeControl1
+            // sessionTreeControl
             // 
             this.sessionTreeControl.ContextMenuVisible = true;
             this.sessionTreeControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sessionTreeControl.Enabled = false;
             this.sessionTreeControl.Location = new System.Drawing.Point(0, 0);
-            this.sessionTreeControl.Name = "sessionTreeControl1";
+            this.sessionTreeControl.Name = "sessionTreeControl";
             this.sessionTreeControl.Size = new System.Drawing.Size(264, 543);
             this.sessionTreeControl.TabIndex = 5;
             this.sessionTreeControl.Visible = false;
-            this.sessionTreeControl.ExportSessions += new uk.org.riseley.puttySessionManager.control.SessionControl.ExportSessionEventHandler(this.sessionTreeControl1_ExportSessions);
             this.sessionTreeControl.LaunchSession += new uk.org.riseley.puttySessionManager.control.SessionControl.LaunchSessionEventHandler(this.sessionControl_LaunchSession);
+            this.sessionTreeControl.ExportSessions += new uk.org.riseley.puttySessionManager.control.SessionControl.ExportSessionEventHandler(this.sessionTreeControl1_ExportSessions);
             this.sessionTreeControl.DeleteSessions += new uk.org.riseley.puttySessionManager.control.SessionControl.DeleteSessionsEventHandler(this.sessionTreeControl1_DeleteSessions);
             // 
-            // sessionListControl1
+            // sessionListControl
             // 
             this.sessionListControl.ContextMenuVisible = true;
             this.sessionListControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sessionListControl.Enabled = false;
             this.sessionListControl.Location = new System.Drawing.Point(0, 0);
-            this.sessionListControl.Name = "sessionListControl1";
+            this.sessionListControl.Name = "sessionListControl";
             this.sessionListControl.Size = new System.Drawing.Size(264, 543);
             this.sessionListControl.TabIndex = 6;
             this.sessionListControl.Visible = false;
@@ -221,7 +221,7 @@ namespace uk.org.riseley.puttySessionManager.form
             this.Opacity = global::uk.org.riseley.puttySessionManager.Properties.Settings.Default.TransparencyValueDouble;
             this.ShowInTaskbar = global::uk.org.riseley.puttySessionManager.Properties.Settings.Default.ShowInTaskbar;
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
-            this.Text = "PuTTY Session Manager";
+            this.Text = "KiTTY Session Manager";
             this.TopMost = global::uk.org.riseley.puttySessionManager.Properties.Settings.Default.AlwaysOnTop;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SessionManagerForm_FormClosing);
             this.sysTrayContextMenu.ResumeLayout(false);

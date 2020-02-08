@@ -77,7 +77,7 @@ namespace uk.org.riseley.puttySessionManager.controller
         /// <summary>
         /// The registry key ( relative to HKCU ) that stores PuTTY sessions
         /// </summary>
-        public const string PUTTY_SESSIONS_REG_KEY = "Software\\SimonTatham\\PuTTY\\Sessions";
+        public const string PUTTY_SESSIONS_REG_KEY = "Software\\9bis.com\\KiTTY\\Sessions";
 
         /// <summary>
         /// The file type for this provider

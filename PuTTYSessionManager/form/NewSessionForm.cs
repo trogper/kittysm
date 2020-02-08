@@ -149,7 +149,7 @@ namespace uk.org.riseley.puttySessionManager.form
             if (sessionComboBox.Items.Count == 0)
             {
                 MessageBox.Show("You must have at least one saved session to copy from.\n" +
-                                "Please create a session in PuTTY first"
+                                "Please create a session in KiTTY first"
                   , "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DialogResult = DialogResult.Cancel;
                 this.Visible = false;

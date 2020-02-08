@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <project xmlns="http://nant.sf.net/release/0.92/nant.xsd"
-         name="PuTTY Session Manager"
+         name="KiTTY Session Manager"
          default="rebuild"
          basedir="..">
 
@@ -20,8 +20,8 @@
   <property name="build.svnrev.filename" value="${dir.buildinfo}/svnrev.txt"/>
   <property name="build.export" value="false"/>
 
-  <property name="output.exe" value="PuTTY Session Manager.exe"/>
-  <property name="output.config" value="PuTTY Session Manager.exe.config"/>
+  <property name="output.exe" value="KiTTY Session Manager.exe"/>
+  <property name="output.config" value="KiTTY Session Manager.exe.config"/>
   <property name="output.filehelpers" value="FileHelpers.dll"/>
   <property name="output.changelog" value="changelog.txt"/>
   <property name="output.licence" value="gpl.txt"/>

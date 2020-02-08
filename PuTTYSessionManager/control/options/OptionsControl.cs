@@ -49,7 +49,7 @@ namespace uk.org.riseley.puttySessionManager.control.options
             switch (fdt)
             {
                 case FileDialogType.PUTTY:
-                    filename = "putty.exe";
+                    filename = "kitty.exe";
                     currentFile = Properties.Settings.Default.PuttyLocation;
                     break;
                 case FileDialogType.PAGEANT:

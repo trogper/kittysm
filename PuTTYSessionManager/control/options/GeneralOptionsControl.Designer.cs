@@ -47,25 +47,30 @@ namespace uk.org.riseley.puttySessionManager.control.options
         {
             this.fontDialog = new System.Windows.Forms.FontDialog();
             this.generalTableLayout = new System.Windows.Forms.TableLayoutPanel();
-            this.locatePuttyButton = new System.Windows.Forms.Button();
-            this.chooseDialogFontButton = new System.Windows.Forms.Button();
-            this.autostartCheckBox = new System.Windows.Forms.CheckBox();
-            this.locatePSFTPbutton = new System.Windows.Forms.Button();
             this.puttyTextBox = new System.Windows.Forms.TextBox();
             this.trackBar = new System.Windows.Forms.TrackBar();
+            this.locatePuttyButton = new System.Windows.Forms.Button();
             this.taskbarCheckBox = new System.Windows.Forms.CheckBox();
             this.startupMinimizeCheckBox = new System.Windows.Forms.CheckBox();
             this.confirmExitCheckBox = new System.Windows.Forms.CheckBox();
+            this.chooseDialogFontButton = new System.Windows.Forms.Button();
             this.sampleDialogTextbox = new System.Windows.Forms.TextBox();
             this.autoMinimizeCheckBox = new System.Windows.Forms.CheckBox();
             this.onTopCheckBox = new System.Windows.Forms.CheckBox();
             this.transparencyCheckBox = new System.Windows.Forms.CheckBox();
+            this.autostartCheckBox = new System.Windows.Forms.CheckBox();
+            this.locatePSFTPbutton = new System.Windows.Forms.Button();
             this.psftpTextBox = new System.Windows.Forms.TextBox();
             this.enablePSFTPCheckBox = new System.Windows.Forms.CheckBox();
             this.closeToTrayCheckBox = new System.Windows.Forms.CheckBox();
             this.generalTableLayout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar)).BeginInit();
             this.SuspendLayout();
+            // 
+            // openFileDialog
+            // 
+            this.openFileDialog.Filter = "putty.exe|kitty.exe|All Files|*.*";
+            this.openFileDialog.FilterIndex = 2;
             // 
             // fontDialog
             // 
@@ -112,59 +117,6 @@ namespace uk.org.riseley.puttySessionManager.control.options
             this.generalTableLayout.Size = new System.Drawing.Size(441, 232);
             this.generalTableLayout.TabIndex = 30;
             // 
-            // locatePuttyButton
-            // 
-            this.locatePuttyButton.AutoSize = true;
-            this.generalTableLayout.SetColumnSpan(this.locatePuttyButton, 2);
-            this.locatePuttyButton.Location = new System.Drawing.Point(3, 152);
-            this.locatePuttyButton.Name = "locatePuttyButton";
-            this.locatePuttyButton.Size = new System.Drawing.Size(123, 23);
-            this.locatePuttyButton.TabIndex = 15;
-            this.locatePuttyButton.Text = "&Locate putty.exe";
-            this.locatePuttyButton.UseVisualStyleBackColor = true;
-            this.locatePuttyButton.Click += new System.EventHandler(this.locatePuttyButton_Click);
-            // 
-            // chooseDialogFontButton
-            // 
-            this.chooseDialogFontButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.chooseDialogFontButton.AutoSize = true;
-            this.generalTableLayout.SetColumnSpan(this.chooseDialogFontButton, 2);
-            this.chooseDialogFontButton.Location = new System.Drawing.Point(3, 123);
-            this.chooseDialogFontButton.Name = "chooseDialogFontButton";
-            this.chooseDialogFontButton.Size = new System.Drawing.Size(123, 23);
-            this.chooseDialogFontButton.TabIndex = 16;
-            this.chooseDialogFontButton.Text = "C&hoose Dialog Font";
-            this.optionsToolTip.SetToolTip(this.chooseDialogFontButton, "Set the font for all dialogs in the application.\r\nWarning: This may upset the dia" +
-        "log layouts.\r\nYou are advised to restart after altering this");
-            this.chooseDialogFontButton.UseVisualStyleBackColor = true;
-            this.chooseDialogFontButton.Click += new System.EventHandler(this.chooseFontButton_Click);
-            // 
-            // autostartCheckBox
-            // 
-            this.autostartCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.autostartCheckBox.AutoSize = true;
-            this.generalTableLayout.SetColumnSpan(this.autostartCheckBox, 2);
-            this.autostartCheckBox.Location = new System.Drawing.Point(3, 3);
-            this.autostartCheckBox.Name = "autostartCheckBox";
-            this.autostartCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.autostartCheckBox.Size = new System.Drawing.Size(92, 17);
-            this.autostartCheckBox.TabIndex = 23;
-            this.autostartCheckBox.Text = "Start on lo&gon";
-            this.optionsToolTip.SetToolTip(this.autostartCheckBox, "Automatically start PSM on Windows login");
-            this.autostartCheckBox.UseVisualStyleBackColor = true;
-            this.autostartCheckBox.Click += new System.EventHandler(this.autostartCheckBox_CheckedChanged);
-            // 
-            // locatePSFTPbutton
-            // 
-            this.generalTableLayout.SetColumnSpan(this.locatePSFTPbutton, 2);
-            this.locatePSFTPbutton.Location = new System.Drawing.Point(3, 181);
-            this.locatePSFTPbutton.Name = "locatePSFTPbutton";
-            this.locatePSFTPbutton.Size = new System.Drawing.Size(123, 23);
-            this.locatePSFTPbutton.TabIndex = 29;
-            this.locatePSFTPbutton.Text = "Locate ps&ftp.exe";
-            this.locatePSFTPbutton.UseVisualStyleBackColor = true;
-            this.locatePSFTPbutton.Click += new System.EventHandler(this.locatePSFTPbutton_Click);
-            // 
             // puttyTextBox
             // 
             this.puttyTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -193,6 +145,18 @@ namespace uk.org.riseley.puttySessionManager.control.options
             this.trackBar.TabIndex = 18;
             this.trackBar.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.trackBar.Value = global::uk.org.riseley.puttySessionManager.Properties.Settings.Default.TransparencyValueInt;
+            // 
+            // locatePuttyButton
+            // 
+            this.locatePuttyButton.AutoSize = true;
+            this.generalTableLayout.SetColumnSpan(this.locatePuttyButton, 2);
+            this.locatePuttyButton.Location = new System.Drawing.Point(3, 152);
+            this.locatePuttyButton.Name = "locatePuttyButton";
+            this.locatePuttyButton.Size = new System.Drawing.Size(123, 23);
+            this.locatePuttyButton.TabIndex = 15;
+            this.locatePuttyButton.Text = "&Locate kitty.exe";
+            this.locatePuttyButton.UseVisualStyleBackColor = true;
+            this.locatePuttyButton.Click += new System.EventHandler(this.locatePuttyButton_Click);
             // 
             // taskbarCheckBox
             // 
@@ -242,6 +206,21 @@ namespace uk.org.riseley.puttySessionManager.control.options
             this.confirmExitCheckBox.TabIndex = 28;
             this.confirmExitCheckBox.Text = "&Confirm on exit";
             this.confirmExitCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // chooseDialogFontButton
+            // 
+            this.chooseDialogFontButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.chooseDialogFontButton.AutoSize = true;
+            this.generalTableLayout.SetColumnSpan(this.chooseDialogFontButton, 2);
+            this.chooseDialogFontButton.Location = new System.Drawing.Point(3, 123);
+            this.chooseDialogFontButton.Name = "chooseDialogFontButton";
+            this.chooseDialogFontButton.Size = new System.Drawing.Size(123, 23);
+            this.chooseDialogFontButton.TabIndex = 16;
+            this.chooseDialogFontButton.Text = "C&hoose Dialog Font";
+            this.optionsToolTip.SetToolTip(this.chooseDialogFontButton, "Set the font for all dialogs in the application.\r\nWarning: This may upset the dia" +
+        "log layouts.\r\nYou are advised to restart after altering this");
+            this.chooseDialogFontButton.UseVisualStyleBackColor = true;
+            this.chooseDialogFontButton.Click += new System.EventHandler(this.chooseFontButton_Click);
             // 
             // sampleDialogTextbox
             // 
@@ -301,6 +280,32 @@ namespace uk.org.riseley.puttySessionManager.control.options
             this.transparencyCheckBox.TabIndex = 13;
             this.transparencyCheckBox.Text = "Enable trans&parency";
             this.transparencyCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // autostartCheckBox
+            // 
+            this.autostartCheckBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.autostartCheckBox.AutoSize = true;
+            this.generalTableLayout.SetColumnSpan(this.autostartCheckBox, 2);
+            this.autostartCheckBox.Location = new System.Drawing.Point(3, 3);
+            this.autostartCheckBox.Name = "autostartCheckBox";
+            this.autostartCheckBox.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.autostartCheckBox.Size = new System.Drawing.Size(92, 17);
+            this.autostartCheckBox.TabIndex = 23;
+            this.autostartCheckBox.Text = "Start on lo&gon";
+            this.optionsToolTip.SetToolTip(this.autostartCheckBox, "Automatically start PSM on Windows login");
+            this.autostartCheckBox.UseVisualStyleBackColor = true;
+            this.autostartCheckBox.Click += new System.EventHandler(this.autostartCheckBox_CheckedChanged);
+            // 
+            // locatePSFTPbutton
+            // 
+            this.generalTableLayout.SetColumnSpan(this.locatePSFTPbutton, 2);
+            this.locatePSFTPbutton.Location = new System.Drawing.Point(3, 181);
+            this.locatePSFTPbutton.Name = "locatePSFTPbutton";
+            this.locatePSFTPbutton.Size = new System.Drawing.Size(123, 23);
+            this.locatePSFTPbutton.TabIndex = 29;
+            this.locatePSFTPbutton.Text = "Locate ps&ftp.exe";
+            this.locatePSFTPbutton.UseVisualStyleBackColor = true;
+            this.locatePSFTPbutton.Click += new System.EventHandler(this.locatePSFTPbutton_Click);
             // 
             // psftpTextBox
             // 

@@ -52,7 +52,7 @@ namespace uk.org.riseley.puttySessionManager.control.options
             // 
             // openFileDialog
             // 
-            this.openFileDialog.FileName = "putty.exe";
+            this.openFileDialog.FileName = "kitty.exe";
             this.openFileDialog.Filter = "putty.exe|putty.exe|All Files|*.*";
             this.openFileDialog.RestoreDirectory = true;
             // 

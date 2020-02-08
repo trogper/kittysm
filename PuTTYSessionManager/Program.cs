@@ -172,7 +172,7 @@ namespace uk.org.riseley.puttySessionManager
                     {
                         System.IO.File.Delete(fileName);
                         MessageBox.Show("File deleted.\n" +
-                                        "Please restart PuTTY Session Manager"
+                                        "Please restart KiTTY Session Manager"
                                         , "ABORT", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     }
                     else

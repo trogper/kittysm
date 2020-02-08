@@ -515,7 +515,8 @@ namespace uk.org.riseley.puttySessionManager.controller
 
             if (conEmuEnabled == false) { 
                 p.StartInfo.FileName = puttyExec;
-                p.StartInfo.Arguments = "-load \"" + sessionName + "\"";
+                if (!String.IsNullOrEmpty(sessionName))
+                    p.StartInfo.Arguments = "-load \"" + sessionName + "\"";
             }
             else
             {

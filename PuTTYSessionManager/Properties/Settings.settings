@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="PuttyLocation" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Program Files (x86)\PuTTY\putty.exe</Value>
+      <Value Profile="(Default)">C:\Program Files (x86)\KiTTY\kitty.exe</Value>
     </Setting>
     <Setting Name="TransparencyEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

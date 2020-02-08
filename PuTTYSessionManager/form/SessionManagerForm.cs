@@ -342,7 +342,7 @@ namespace uk.org.riseley.puttySessionManager.form
                     String errMsg = sc.launchSession(se.SessionName());
                     if (errMsg.Equals("") == false)
                     {
-                        MessageBox.Show("PuTTY Failed to start.\nCheck the PuTTY location in System Tray -> Options.\n" +
+                        MessageBox.Show("KiTTY Failed to start.\nCheck the PuTTY location in System Tray -> Options.\n" +
                                         errMsg
                         , "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }

@@ -22,8 +22,8 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PuTTY Session Manager")]
-[assembly: AssemblyDescription("Organise your PuTTY ( © Simon Tatham ) sessions into folders.\r\n" 
+[assembly: AssemblyTitle("KiTTY Session Manager")]
+[assembly: AssemblyDescription("Organise your KiTTY sessions into folders.\r\n"
     + "Inspired by QuickPuTTY by Olivier Deckmyn, re-written in C#.\r\n\r\n"
     + "Uses the FileHelpers Library ( ©2005-2006 Marcos Meli ) released under the LGPL.\r\n\r\n"
     + "This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License " 
@@ -34,7 +34,7 @@ using System.Runtime.InteropServices;
     + "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PuTTY Session Manager")]
+[assembly: AssemblyProduct("KiTTY Session Manager")]
 [assembly: AssemblyCopyright("Copyright © David Riseley 2006 - 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
