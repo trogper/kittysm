@@ -145,7 +145,9 @@ namespace uk.org.riseley.puttySessionManager.form
                   // Do nothing
                 }
             }
-            systrayIcon.Visible = true;
+
+            if (Properties.Settings.Default.CloseToTray)
+                systrayIcon.Visible = true;
 
             // Restore the size of the application
             this.ClientSize = Properties.Settings.Default.WindowSize;
@@ -317,7 +319,10 @@ namespace uk.org.riseley.puttySessionManager.form
         /// </summary>
         public void hideApplication()
         {
-            showApplication(false);
+            if (Properties.Settings.Default.CloseToTray)
+                showApplication(false);
+            else
+                Exit();
         }
 
         /// <summary>
@@ -538,6 +543,9 @@ namespace uk.org.riseley.puttySessionManager.form
         /// <param name="e"></param>
         private void SessionManagerForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (!Properties.Settings.Default.CloseToTray)
+                Exit();
+
             if (e.CloseReason == CloseReason.UserClosing)
             {
                 e.Cancel = true;

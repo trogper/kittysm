@@ -258,5 +258,8 @@
     <Setting Name="ConEmuLocation" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Program Files\ConEmu\ConEmu64.exe</Value>
     </Setting>
+    <Setting Name="CloseToTray" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
